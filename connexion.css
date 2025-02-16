@@ -1,4 +1,4 @@
-/* 🔹 Réinitialisation et style global */
+/* style global */
 * {
     margin: 0;
     padding: 0;
@@ -14,7 +14,7 @@ body {
     background-color: #ecf0f1;
 }
 
-/* 🔹 Conteneur principal du formulaire */
+/* Conteneur principal du formulaire */
 .form-container {
     width: 100%;
     max-width: 500px;
@@ -30,7 +30,7 @@ h1 {
     margin-bottom: 20px;
 }
 
-/* 🔹 Styles des groupes de champs */
+
 .form-group {
     margin-bottom: 20px;
 }
@@ -76,7 +76,7 @@ button:hover {
     background-color: #2980b9;
 }
 
-/* 🔹 Responsive design */
+
 @media screen and (max-width: 768px) {
     .form-container {
         padding: 20px;
