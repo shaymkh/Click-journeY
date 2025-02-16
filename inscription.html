@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulaire d'inscription</title>
+    <link rel="stylesheet" href="inscription.css">
+</head>
+<body>
+	<div class="sidebar">
+        <h2>Cy City Adventure</h2>
+        <ul>
+           <li><a href="accueil.html">🏠 Accueil</a></li>
+            <li><a href="presentation.html">📜 Présentation</a></li>
+            <li><a href="se_connecter.html">🔑 Se connecter</a></li>
+            <li><a href="modifier_profil.html">✏️ Modifier votre profil</a></li>
+            <li><a href="destinations.html">🌍 Destinations</a></li>
+            <li><a href="admin.html">👨‍💻 Administrateur</a></li>
+        </ul>
+    </div>
+
+    <!-- Content area (you can add your content here) -->
+   
+    <div class="form-container">
+        <h1>Inscription</h1>
+        <form action="#" method="POST">
+            <div class="form-group">
+                <label for="phone">Numéro de téléphone</label>
+                <input type="tel" id="phone" name="phone" placeholder="Entrez votre numéro" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Entrez votre email" required>
+            </div>
+            <div class="form-group">
+                <label for="lastName">Nom</label>
+                <input type="text" id="lastName" name="lastName" placeholder="Entrez votre nom" required>
+            </div>
+            <div class="form-group">
+                <label for="firstName">Prénom</label>
+                <input type="text" id="firstName" name="firstName" placeholder="Entrez votre prénom" required>
+            </div>
+            <div class="form-group">
+                <label for="dob">Date de naissance</label>
+                <input type="date" id="dob" name="dob" required>
+            </div>
+            <div class="form-group">
+                <label for="address">Adresse</label>
+                <textarea id="address" name="address" rows="4" placeholder="Entrez votre adresse" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="password">Mot de passe</label>
+                <input type="password" id="password" name="password" placeholder="Créez un mot de passe" required>
+            </div>
+            <div class="form-group">
+                <button type="submit">S'inscrire</button>
+            </div>
+        </form>
+    </div>
+
+</body>
+</html>
