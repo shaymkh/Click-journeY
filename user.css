@@ -1,0 +1,171 @@
+/* 🔹 Centrer le contenu */
+.content {
+    margin-left: 260px;
+    width: calc(100% - 260px);
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centre tout le contenu */
+    justify-content: center;
+}
+
+/* 🔹 Centrer et agrandir le tableau */
+table {
+    width: 80%; /* Agrandit le tableau */
+    max-width: 1200px; /* Évite qu'il soit trop grand */
+    margin: 20px auto; /* Centre le tableau */
+    border-collapse: collapse;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+/* 🔹 Espacement des cellules */
+th, td {
+    padding: 20px; /* Augmente la taille des cellules */
+    border-bottom: 1px solid #ddd;
+}
+
+/* 🔹 Style de l’en-tête */
+th {
+    background-color: #3498db;
+    color: white;
+    font-size: 20px; /* Agrandit le texte des titres */
+    text-align: center;
+}
+
+/* 🔹 Style des lignes
+tr:hover {
+    background-color: #f0f0f0;
+} */
+
+/* 🔹 Boutons bien espacés et centrés */
+td button {
+    display: block;
+    width: 100px;
+    padding: 12px;
+    margin: 5px auto;
+    text-align: center;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+
+
+/* 🔹 Adaptation sur mobile */
+@media screen and (max-width: 768px) {
+    .content {
+        margin-left: 0;
+        width: 100%;
+        padding: 20px;
+    }
+
+    table {
+        width: 95%;
+        font-size: 14px; /* Réduit la taille du texte */
+    }
+
+    th, td {
+        padding: 12px;
+    }
+
+    td button {
+        width: 90px;
+        padding: 10px;
+        font-size: 14px;
+    }
+}
+/* 🔹 Animation d'apparition des nouvelles lignes */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.new-row {
+    animation: fadeIn 0.5s ease-in-out;
+}
+/* 🔹 Réinitialisation et Style Global */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    background-color: #f4f4f4;
+}
+
+/* 🔹 Sidebar (Barre latérale) */
+.sidebar {
+    width: 250px;
+    background-color: #2c3e50;
+    color: white;
+    padding: 20px;
+    height: 100vh;
+    position: fixed;
+   }
+
+.sidebar h2 {
+    text-align: center;
+   
+   
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin: 20px 0;
+}
+
+.sidebar ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    display: block;
+    align-items: center;
+    padding: 10px;
+    border-radius: 10px;
+    transition:0.3s ;
+}
+
+.sidebar ul li a:hover {
+        background-color: #34495e;
+    border-radius: 5px;
+}
+
+/* 🔹 Contenu Principal */
+.content {
+    margin-left: 260px;
+    width: calc(100% - 260px);
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* 🔹 Titre principal */
+h1 {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* 🔹 Tableau centré et agrandi */
+table {
+    width: 80%;
+    max-width: 1200px;
+    margin: 20px auto;
+  

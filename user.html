@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestion des Utilisateurs</title>
+    <link rel="stylesheet" href="user.css">
+</head>
+<body>
+
+    <div class="sidebar">
+        <h2>Admin Panel</h2>
+        <ul>
+            <li><a href="admin.html">🏠 Tableau de bord</a></li>
+            <li><a href="users.html">👤 Utilisateurs</a></li>
+            <li><a href="#">📂 Contenu</a></li>
+            <li><a href="#">⚙️ Paramètres</a></li>
+            <li><a href="#">🚪 Déconnexion</a></li>
+        </ul>
+    </div>
+
+    <div class="content">
+        <h1>Liste des Utilisateurs</h1>
+
+        <!-- Bouton Ajouter un utilisateur -->
+        <button id="addUserBtn">➕ Enregistrer un utilisateur</button>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Prénom</th>
+                    <th>Nom</th>
+   		    <th>âge</th>
+                    <th>Email</th>
+                    <th>Statut</th>
+                </tr>
+            </thead>
+            <tbody id="userTable">
+                <!-- Les utilisateurs seront ajoutés ici -->
+            </tbody>
+        </table>
+    </div>
+
+</body>
+</html>
