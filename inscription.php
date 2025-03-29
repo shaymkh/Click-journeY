@@ -93,10 +93,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         <!-- Affichage des messages d'erreur ou de succès -->
         <?php if (isset($error)): ?>
-            <p class="p-error"><?= $error ?></p>
+            <p style="color: red; font-weight: bold;"><?= $error ?></p>
         <?php endif; ?>
         <?php if (isset($success)): ?>
-            <p class="p-success"><?= $success ?></p>
+            <p style="color: green; font-weight: bold;"><?= $success ?></p>
         <?php endif; ?>
 
         <form action="" method="POST">
