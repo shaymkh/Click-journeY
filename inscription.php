@@ -42,7 +42,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     'lastName' => "$lastName",
                     'firstName' => "$firstName",
                     'phone' => "$phone",
-                    'email' => htmlspecialchars($email),
+                    'email' => $email,
                     'dob' => $dob,
                   
                 ];
