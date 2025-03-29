@@ -28,3 +28,229 @@
         "dob": "30-04-2006",
         "address": "10 rue du port 281000 dreux",
     },
+[
+    {
+        "titre": "Aventure à Tanger",
+        "dates": {"start": "2025-05-01", "end": "2025-05-07"},
+        "etapes": [
+            {
+                "titre": "Arrivée à Tanger",
+                "dates": {"start": "2025-05-01", "end": "2025-05-02"},
+                "loction": "Tanger",
+                "options": {
+                    "heber": "Hôtel 3 étoiles",
+                    "activités": ["Visite guidée de la médina", "Dégustation de cuisine locale"],
+                    "transport": "Transfert aéroport-hôtel"
+                }
+            },
+            {
+                "titre": "Excursion aux montagnes Rif",
+                "dates": {"start": "2025-05-03", "end": "2025-05-05"},
+                "lieu": "Montagnes Rif",
+                "options": {
+                    "heber": "Campement traditionnel",
+                    "activités": ["Randonnée", "Visite de villages berbères"],
+                    "transport": "Véhicule tout terrain"
+                }
+            }
+        ],
+        "prix": 1200,
+        "status": "en cours de modification"
+    },
+    {
+        "titre": "Séjour à Amsterdam",
+        "dates": {"start": "2025-06-10", "end": "2025-06-15"},
+        "etapes": [
+            {
+                "titre": "Découverte d'Amsterdam",
+                "dates": {"start": "2025-06-10", "end": "2025-06-12"},
+                "lieu": "Amsterdam",
+                "options": {
+                    "heber": "Appartement",
+                    "activités": ["Visite des musées", "Balade en bateau sur les canaux"],
+                    "transport": "Transport public illimité"
+                }
+            },
+            {
+                "titre": "Excursion dans les champs de tulipes",
+                "dates": {"start": "2025-06-13", "end": "2025-06-14"},
+                "lieu": "Lisse",
+                "options": {
+                    "heber": "Chambre d'hôte",
+                    "activités": ["Visite des jardins Keukenhof", "Photo dans les champs de tulipes"],
+                    "transport": "Navette"
+                }
+            }
+        ],
+        "prix": 1500,
+        "status": "payé"
+    },
+    {
+        "titre": "Séjour à New York",
+        "dates": {"start": "2025-07-01", "end": "2025-07-10"},
+        "etapes": [
+            {
+                "titre": "Découverte de Manhattan",
+                "dates": {"start": "2025-07-01", "end": "2025-07-04"},
+                "lieu": "New York",
+                "options": {
+                    "heber": "Hôtel 4 étoiles",
+                    "activités": ["Visite de la Statue de la Liberté", "Promenade à Central Park"],
+                    "transport": "Pass métro illimité"
+                }
+            },
+            {
+                "titre": "Visite des musées de New York",
+                "dates": {"start": "2025-07-05", "end": "2025-07-07"},
+                "lieu": "New York",
+                "options": {
+                    "heber": "Appartement",
+                    "activités": ["Visite du musée d'Art Moderne", "Exposition à l'Empire State Building"],
+                    "transport": "Transport privé"
+                }
+            }
+        ],
+        "prix": 2500,
+        "status": "payé"
+    },
+    {
+        "titre": "Séjour à Londres",
+        "dates": {"start": "2025-08-05", "end": "2025-08-10"},
+        "etapes": [
+            {
+                "titre": "Visite des monuments de Londres",
+                "dates": {"start": "2025-08-05", "end": "2025-08-07"},
+                "lieu": "Londres",
+                "options": {
+                    "heber": "Hôtel 5 étoiles",
+                    "activités": ["Visite du Palais de Buckingham", "Tour en bus à impériale"],
+                    "transport": "Transport illimité"
+                }
+            },
+            {
+                "titre": "Excursion à Oxford",
+                "dates": {"start": "2025-08-08", "end": "2025-08-09"},
+                "lieu": "Oxford",
+                "options": {
+                    "heber": "B&B",
+                    "activités": ["Visite de l'Université d'Oxford", "Promenade dans les jardins botaniques"],
+                    "transport": "Train"
+                }
+            }
+        ],
+        "prix": 1800,
+        "status": "en cours de modification"
+    },
+    {
+        "titre": "Aventure à Dubaï",
+        "dates": {"start": "2025-09-01", "end": "2025-09-07"},
+        "etapes": [
+            {
+                "titre": "Découverte de Dubaï",
+                "dates": {"start": "2025-09-01", "end": "2025-09-03"},
+                "lieu": "Dubaï",
+                "options": {
+                    "heber": "Hôtel 5 étoiles",
+                    "activités": ["Visite de Burj Khalifa", "Shopping au Dubai Mall"],
+                    "transport": "Voiture location de luxe"
+                }
+            },
+            {
+                "titre": "Safari dans le désert",
+                "dates": {"start": "2025-09-04", "end": "2025-09-05"},
+                "lieu": "Désert de Dubaï",
+                "options": {
+                    "heber": "Campement de luxe",
+                    "activités": ["Safari en 4x4", "Dîner sous les étoiles"],
+                    "transport": "4x4"
+                }
+            }
+        ],
+        "prix": 3000,
+        "status": "payé"
+    },
+    {
+        "titre": "Escapade romantique à Tanger",
+        "dates": {"start": "2025-10-01", "end": "2025-10-05"},
+        "etapes": [
+            {
+                "titre": "Séjour romantique à Tanger",
+                "dates": {"start": "2025-10-01", "end": "2025-10-03"},
+                "lieu": "Tanger",
+                "options": {
+                    "heber": "Riad traditionnel",
+                    "activités": ["Dîner romantique", "Balade en bord de mer"],
+                    "transport": "Taxi privé"
+                }
+            },
+            {
+                "titre": "Excursion à Chefchaouen",
+                "dates": {"start": "2025-10-04", "end": "2025-10-05"},
+                "lieu": "Chefchaouen",
+                "options": {
+                    "heber": "Chambre d'hôte",
+                    "activités": ["Visite de la médina bleue", "Randonnée en montagne"],
+                    "transport": "Véhicule de location"
+                }
+            }
+        ],
+        "prix": 1400,
+        "status": "en cours de modification"
+    },
+    {
+        "titre": "Voyage à Amsterdam",
+        "dates": {"start": "2025-11-01", "end": "2025-11-07"},
+        "etapes": [
+            {
+                "titre": "Découverte de la ville",
+                "dates": {"start": "2025-11-01", "end": "2025-11-03"},
+                "lieu": "Amsterdam",
+                "options": {
+                    "heber": "Hôtel 4 étoiles",
+                    "activités": ["Balade en vélo", "Visite de la maison d'Anne Frank"],
+                    "transport": "Vélo"
+                }
+            },
+            {
+                "titre": "Excursion à Zaanse Schans",
+                "dates": {"start": "2025-11-04", "end": "2025-11-06"},
+                "lieu": "Zaanse Schans",
+                "options": {
+                    "heber": "Maison traditionnelle",
+                    "activités": ["Visite de moulins à vent", "Dégustation de fromage"],
+                    "transport": "Navette"
+                }
+            }
+        ],
+        "prix": 1600,
+        "status": "payé"
+    },
+    {
+        "titre": "Séjour à New York et ses environs",
+        "dates": {"start": "2025-12-01", "end": "2025-12-05"},
+        "etapes": [
+            {
+                "titre": "Visite de Manhattan",
+                "dates": {"start": "2025-12-01", "end": "2025-12-02"},
+                "lieu": "Manhattan, New York",
+                "options": {
+                    "heber": "Appartement de luxe",
+                    "activités": ["Visite du MoMA", "Croisière autour de Manhattan"],
+                    "transport": "métro"
+                }
+            },
+            {
+                "titre": "Excursion à Long Island",
+                "dates": {"start": "2025-12-03", "end": "2025-12-04"},
+                "lieu": "Long Island",
+                "options": {
+                    "heber": "Château",
+                    "activités": ["Visite des plages", "Dégustation de vin"],
+                    "transport": "Train"
+                }
+            }
+        ],
+        "prix": 2200,
+        "status": "en cours de modification"
+    },
+   
