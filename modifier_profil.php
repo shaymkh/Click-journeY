@@ -2,8 +2,8 @@
 // Démarre la session
 session_start();
 
-// Récupération des utilisateurs depuis le fichier users.json
-$file = 'users.json';
+// Récupération des utilisateurs depuis le fichier data/utilisateurs.json
+$file = 'data/utilisateurs.json';
 if (file_exists($file)) {
     $data = json_decode(file_get_contents($file), true);
 } else {
@@ -72,12 +72,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit'])) {
     <div class="sidebar">
         <h2>Cy City Adventure</h2>
         <ul>
-            <li><a href="accueil.html">🏠 Accueil</a></li>
-            <li><a href="presentation.html">📜 Présentation</a></li>
-            <li><a href="connexion.html">🔑 Se connecter</a></li>
-            <li><a href="inscription.html">✏️ inscription</a></li>
-            <li><a href="destinations.html">🌍 Destinations</a></li>
-            <li><a href="admin.html">👨‍💻 Administrateur</a></li>
+            <li><a href="accueil.php">🏠 Accueil</a></li>
+            <li><a href="presentation.php">📜 Présentation</a></li>
+            <li><a href="connexion.php">🔑 Se connecter</a></li>
+            <li><a href="inscription.php">✏️ inscription</a></li>
+            <li><a href="destinations.php">🌍 Destinations</a></li>
+            <li><a href="admin.php">👨‍💻 Administrateur</a></li>
         </ul>
     </div>
 
