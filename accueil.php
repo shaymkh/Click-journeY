@@ -15,13 +15,13 @@ session_start();
     <!-- 🔹 Barre de Navigation -->
     <nav class="navbar">
         <ul>
-            <li><a href="accueil.html">🏠 Accueil</a></li>
-            <li><a href="presentation.html">📜 Présentation</a></li>
-            <li><a href="connexion.html">🔑 Se Connecter</a></li>
-            <li><a href="inscription.html">📝 Inscription</a></li>
-            <li><a href="modifier_profil.html">✏️ Modifier le Profil</a></li>
-            <li><a href="destinations.html">🌍 Destinations</a></li>
-            <li><a href="admin.html">👨‍💻 Administrateur</a></li>
+            <li><a href="accueil.php">🏠 Accueil</a></li>
+            <li><a href="presentation.php">📜 Présentation</a></li>
+            <li><a href="connexion.php">🔑 Se Connecter</a></li>
+            <li><a href="inscription.php">📝 Inscription</a></li>
+            <li><a href="modifier_profil.php">✏️ Modifier le Profil</a></li>
+            <li><a href="destinations.php">🌍 Destinations</a></li>
+            <li><a href="admin.php">👨‍💻 Administrateur</a></li>
         </ul>
     </nav>
 
