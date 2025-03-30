@@ -22,7 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $error = "L'email n'est pas valide.";
         } else {
             // Vérification si l'email existe déjà dans le fichier
-            $file = 'users.json';
+            $file = 'data/utilisateurs.json';
             if (file_exists($file)) {
                 $users = json_decode(file_get_contents($file), true);
                 foreach ($users as $user) {
@@ -137,5 +137,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 </body>
 </html>
+
+
 
 
