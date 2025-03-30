@@ -28,5 +28,25 @@
         "dob": "2006-04-30",
         "address": "10 rue du port 28100 dreux",
         "motdepasse": "$2b$12$sOk9WIpBnE.PNMOCQP8ux.X0W0lJlltppnthMzVmaBFAta9irVWD6"
+    },
+    {
+        "statut": "admin",
+        "firstName": "Admin",
+        "lastName": "One",
+        "phone": "0700000001",
+        "email": "admin1@cycity.com",
+        "dob": "1990-01-01",
+        "address": "1 avenue de l'admin, Paris",
+        "motdepasse": "$2b$12$JV9bZTNB7CoyNmDr8V5U/u22yS9OyDRMaRiA1xyJe0xyvQjo43iRu"
+    },
+    {
+        "statut": "admin",
+        "firstName": "Super",
+        "lastName": "Admin",
+        "phone": "0700000002",
+        "email": "admin2@cycity.com",
+        "dob": "1985-05-15",
+        "address": "2 rue admin, Lyon",
+        "motdepasse": "$2b$12$K./7qR2ADCEhZmopfhQa7.jl7K3C/acMrimdSi4dyikFoomzF2WRu"
     }
 ]
