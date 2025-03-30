@@ -1,0 +1,32 @@
+[
+    {
+        "statut": "utilisateur",
+        "firstName": "Salim",
+        "lastName": "Chalkoune",
+        "phone": "0700000000",
+        "email": "salimchk@outlook.com",
+        "dob": "2000-02-28",
+        "address": "10 rue du port 95000 cergy",
+        "motdepasse": "$2b$12$PzVd99EnZww2h9I/Ugnb4OA7wJjaePWPUmYEXy7v56ScZYyQaWfgy"
+    },
+    {
+        "statut": "utilisateur",
+        "firstName": "Nayla",
+        "lastName": "Benabour",
+        "phone": "0706000000",
+        "email": "naylabnb@outlook.com",
+        "dob": "2005-03-30",
+        "address": "10 rue du port 78000 elancourt",
+        "motdepasse": "$2b$12$nbdyieq/KxFvqhVXd82ieeHdYg1DDwnotpmD.bMdCctevdhxI.gJq"
+    },
+    {
+        "statut": "utilisateur",
+        "firstName": "Yasmine",
+        "lastName": "Elkourahi",
+        "phone": "0704000000",
+        "email": "yaselk@outlook.com",
+        "dob": "2006-04-30",
+        "address": "10 rue du port 28100 dreux",
+        "motdepasse": "$2b$12$sOk9WIpBnE.PNMOCQP8ux.X0W0lJlltppnthMzVmaBFAta9irVWD6"
+    }
+]
