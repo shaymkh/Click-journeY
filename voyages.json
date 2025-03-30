@@ -1,0 +1,131 @@
+[
+    {
+        "titre": "Aventure à Tanger",
+        "dates": {
+            "start": "2025-05-01",
+            "end": "2025-05-07"
+        },
+        "etapes": [
+            {
+                "titre": "Arrivée à Tanger",
+                "dates": {
+                    "start": "2025-05-01",
+                    "end": "2025-05-02"
+                },
+                "lieu": "Tanger",
+                "options": {
+                    "heber": "Hôtel 3 étoiles",
+                    "activités": [
+                        "Visite guidée de la médina",
+                        "Dégustation de cuisine locale"
+                    ],
+                    "transport": "Transfert aéroport-hôtel"
+                }
+            },
+            {
+                "titre": "Excursion aux montagnes Rif",
+                "dates": {
+                    "start": "2025-05-03",
+                    "end": "2025-05-05"
+                },
+                "lieu": "Montagnes Rif",
+                "options": {
+                    "heber": "Campement traditionnel",
+                    "activités": [
+                        "Randonnée",
+                        "Visite de villages berbères"
+                    ],
+                    "transport": "Véhicule tout terrain"
+                }
+            }
+        ],
+        "prix": 1200,
+        "status": "en cours de modification"
+    },
+    {
+        "titre": "Séjour à Amsterdam",
+        "dates": {
+            "start": "2025-06-10",
+            "end": "2025-06-15"
+        },
+        "etapes": [
+            {
+                "titre": "Découverte d'Amsterdam",
+                "dates": {
+                    "start": "2025-06-10",
+                    "end": "2025-06-12"
+                },
+                "lieu": "Amsterdam",
+                "options": {
+                    "heber": "Appartement",
+                    "activités": [
+                        "Visite des musées",
+                        "Balade en bateau sur les canaux"
+                    ],
+                    "transport": "Transport public illimité"
+                }
+            },
+            {
+                "titre": "Excursion dans les champs de tulipes",
+                "dates": {
+                    "start": "2025-06-13",
+                    "end": "2025-06-14"
+                },
+                "lieu": "Lisse",
+                "options": {
+                    "heber": "Chambre d'hôte",
+                    "activités": [
+                        "Visite des jardins Keukenhof",
+                        "Photo dans les champs de tulipes"
+                    ],
+                    "transport": "Navette"
+                }
+            }
+        ],
+        "prix": 1500,
+        "status": "payé"
+    },
+    {
+        "titre": "Séjour à New York",
+        "dates": {
+            "start": "2025-07-01",
+            "end": "2025-07-10"
+        },
+        "etapes": [
+            {
+                "titre": "Découverte de Manhattan",
+                "dates": {
+                    "start": "2025-07-01",
+                    "end": "2025-07-04"
+                },
+                "lieu": "New York",
+                "options": {
+                    "heber": "Hôtel 4 étoiles",
+                    "activités": [
+                        "Visite de la Statue de la Liberté",
+                        "Promenade à Central Park"
+                    ],
+                    "transport": "Pass métro illimité"
+                }
+            },
+            {
+                "titre": "Visite des musées de New York",
+                "dates": {
+                    "start": "2025-07-05",
+                    "end": "2025-07-07"
+                },
+                "lieu": "New York",
+                "options": {
+                    "heber": "Appartement",
+                    "activités": [
+                        "Visite du musée d'Art Moderne",
+                        "Exposition à l'Empire State Building"
+                    ],
+                    "transport": "Transport privé"
+                }
+            }
+        ],
+        "prix": 2500,
+        "status": "payé"
+    }
+]
