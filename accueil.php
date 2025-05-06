@@ -22,6 +22,7 @@ session_start();
             <li><a href="modifier_profil.php">✏️ Modifier le Profil</a></li>
             <li><a href="destinations.php">🌍 Destinations</a></li>
             <li><a href="admin.php">👨‍💻 Administrateur</a></li>
+            <li> changer le thème</a></li>
         </ul>
     </nav>
 
