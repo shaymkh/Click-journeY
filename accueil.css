@@ -150,12 +150,12 @@ body {
     letter-spacing: 3px;
 }
 /* 🔹 Thèmes */
-.theme-light {
+.theme-clair {
   background-color: #ffffff;
   color: #000000;
 }
 
-.theme-dark {
+.theme-sombre {
   background-color: #1e1e1e;
   color: #f0f0f0;
 }
