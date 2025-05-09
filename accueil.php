@@ -9,8 +9,9 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <h1>CYcity Adventure</h1>
     <link rel="stylesheet" href="accueil.css">
+      <script src="accueil.js"></script>
 </head>
-<body>
+<body  class="theme-clair">
 
     <!-- 🔹 Barre de Navigation -->
     <nav class="navbar">
@@ -22,7 +23,22 @@ session_start();
             <li><a href="modifier_profil.php">✏️ Modifier le Profil</a></li>
             <li><a href="destinations.php">🌍 Destinations</a></li>
             <li><a href="admin.php">👨‍💻 Administrateur</a></li>
-            <li> changer le thème</li>
+            <li class="theme-selector">
+        
+
+ 
+    <span class="theme-label">Changer de thème</span>
+    <div class="dropdown">
+      <div onclick="setTheme('contrast')">Contrasté</div>
+      <div onclick="setTheme('sombre')">Mode sombre</div>
+      <div onclick="setTheme('clair')">Mode clair</div>
+      <div onclick="setTheme('malvoyant')">Malvoyant</div>
+      <div onclick="setTheme('reset')">♻️ Réinitialiser</div>    
+    </div>
+  </li>
+
+  
+
         </ul>
     </nav>
 
@@ -42,7 +58,9 @@ session_start();
         </div>
         <div class="slide fade">
             <img src="https://i0.wp.com/www.mahaara.fr/wp-content/uploads/2024/03/Tanger-vue-depuis-les-remparts-Maroc-Coucher-de-Soleil-Mahaara-scaled.jpg?fit=2560%2C1707&ssl=1" alt="Tanger au coucher du soleil"></div>
-<div class="overlay">
+
+        
+        <div class="overlay">
         <h1>CYcity Adventure</h1>
     </div>
 
