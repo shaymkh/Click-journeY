@@ -1,7 +1,7 @@
 // Appliquer un thème et le sauvegarder
 function setTheme(theme) {
   if (theme === 'reset') {
-    document.body.className = 'theme-light'; // Thème par défaut
+    document.body.className = 'theme-clair'; // Thème par défaut
     localStorage.removeItem('selectedTheme');
   } else {
     document.body.className = 'theme-' + theme;
