@@ -42,8 +42,8 @@ document.addEventListener('DOMContentLoaded', () => {
       setTimeout(() => {
         loader.remove();
         btn.disabled = false;
-        // Visual toggle only:
-        // en phase 4, appelez ici votre API avec fetch()
+        
+        // la phase 4
       }, 2000);
     });
   });
