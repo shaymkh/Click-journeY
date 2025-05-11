@@ -27,9 +27,8 @@ session_start();
         
 
  
-    <span class="theme-label">Changer de thème</span>
+    <span class="theme-label">thème</span>
     <div class="dropdown">
-      <div onclick="setTheme('contrast')">Contrasté</div>
       <div onclick="setTheme('sombre')">Mode sombre</div>
       <div onclick="setTheme('clair')">Mode clair</div>
       <div onclick="setTheme('malvoyant')">Malvoyant</div>
