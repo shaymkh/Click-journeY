@@ -58,46 +58,74 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Connexion</title>
     <link rel="stylesheet" href="connexion.css">
-    <script src="connexion.js"></script>
+    <script src="connexion.js" defer></script>
+    <link rel="stylesheet" href="accueil.css">
+    <link rel="stylesheet" href="theme.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
 </head>
 <body>
-    <div class="sidebar">
-        <h2>Cy City Adventure</h2>
-        <ul>
-            <li><a href="accueil.php">🏠 Accueil</a></li>
-            <li><a href="presentation.php">📜 Présentation</a></li>
-            <li><a href="connexion.php">🔑 Se connecter</a></li>
-            <li><a href="modifier_profil.php">✏️ Modifier votre profil</a></li>
-            <li><a href="inscription.php">📝 Inscription</a></li>
-            <li><a href="destinations.php">🌍 Destinations</a></li>
-            <li><a href="admin.php">👨‍💻 Administrateur</a></li>
-        </ul>
-    </div>
+  <!-- 🔹 Barre de Navigation -->
+  <nav class="navbar">
+    <ul>
+      <li><a href="accueil.php">Accueil</a></li>
+      <li><a href="presentation.php">Présentation</a></li>
+      <li><a href="connexion.php">Se Connecter</a></li>
+      <li><a href="inscription.php">Inscription</a></li>
+      <li><a href="modifier_profil.php">Modifier le Profil</a></li>
+      <li><a href="destinations.php">Destinations</a></li>
+      <li><a href="admin.php">Administrateur</a></li>
+      <!-- 🔘 Bouton thème -->
+      <li>
+        <button
+          type="button"
+          data-theme-toggle
+          aria-label="Changer de thème"
+          class="theme-toggle-btn"
+        >
+          Thème Sombre
+        </button>
+<li>
+  <button
+    type="button"
+    id="btn-accessibilite"
+    class="theme-toggle-btn"
+  >
+    Malvoyant
+  </button>
+</li>
 
-    <div class="form-container">
-        <h1>Se connecter</h1>
+      </li>
+    </ul>
+  </nav>
 
-        <?php if (!empty($erreur)): ?>
-            <p style="color: red;"><?= htmlspecialchars($erreur) ?></p>
-        <?php endif; ?>
+  <!-- Contenu principal -->
+  <div class="form-container">
+    <h1>Se connecter</h1>
 
-        <form method="POST" id="formConnexion">
-            <div class="form-group">
-                <label for="phone">Numéro de téléphone ou e-mail</label>
-                <input type="text" id="phone" name="phone" placeholder="Entrez votre numéro de téléphone ou mail" required>
-                <small class="message-erreur"></small>
+    <?php if (!empty($erreur)): ?>
+        <p style="color: red;"><?= htmlspecialchars($erreur) ?></p>
+    <?php endif; ?>
+
+    <form method="POST" id="formConnexion">
+        <div class="form-group">
+            <label for="phone">Numéro de téléphone ou e-mail</label>
+            <input type="text" id="phone" name="phone" placeholder="Entrez votre numéro de téléphone ou mail" required>
+            <small class="message-erreur"></small>
+        </div>
+        <div class="form-group">
+            <label for="motdepasse">Mot de passe</label>
+            <div class="motdepasse-container">
+                <input type="password" id="motdepasse" name="motdepasse" placeholder="Votre mot de passe" required> <!-- Correction du type -->
+                <span id="togglemotdepasse" class="fas fa-eye"></span>
             </div>
-            <div class="form-group">
-                <label for="password">Mot de passe</label>
-                <input type="password" id="password" name="password" placeholder="Votre mot de passe" required>
-                <small class="message-erreur"></small>
-            </div>
-            <div class="form-group">
-                <button type="submit">Se connecter</button>
-            </div>
-        </form>
-    </div>
+            <small class="message-erreur"></small>
+        </div>
+        <div class="form-group">
+            <button type="submit">Se connecter</button>
+        </div>
+    </form>
+  </div>
+
+  <script src="accueil.js" defer></script> 
 </body>
 </html>
-
-
