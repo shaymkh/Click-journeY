@@ -1,34 +1,58 @@
-const validThemes = ['clair', 'sombre', 'contrast', 'malvoyant'];
+/// Fonction de basculement entre le thème clair et sombre
+function toggleTheme() {
+  const currentTheme = document.documentElement.getAttribute("data-theme");
+  const newTheme = currentTheme === "dark" ? "light" : "dark";
 
-// Fonction pour définir un cookie
-function setCookie(name, value, days) {
-  const expires = new Date(Date.now() + days * 864e5).toUTCString();
-  document.cookie = name + '=' + encodeURIComponent(value) + '; expires=' + expires + '; path=/';
+  // sauvegarder le nouveau thème dans localStorage
+  localStorage.setItem("theme", newTheme);
+
+  // appliquer le thème à l'élément <html>
+  document.documentElement.setAttribute("data-theme", newTheme);
+
+  // mise a jour texte du bouton de changement de thème
+  updateThemeButton();
 }
 
-// Fonction pour lire un cookie
-function getCookie(name) {
-  return document.cookie
-    .split('; ')
-    .find(row => row.startsWith(name + '='))
-    ?.split('=')[1];
+//  mettre à jour le bouton de changement de thème
+function updateThemeButton() {
+  const button = document.querySelector("[data-theme-toggle]");
+  if (!button) return;
+
+  const isDark = document.documentElement.getAttribute("data-theme") === "dark";
+  const label = isDark ? "Thème Clair" : "Thème Sombre";
+  button.setAttribute("aria-label", label);
+  button.textContent = label;
 }
 
-// Appliquer un thème et le sauvegarder dans le cookie
-function setTheme(theme) {
-  if (!validThemes.includes(theme)) {
-    theme = 'clair'; // Valeur par défaut
+// Appliquer le thème lors du chargement de la page
+const theme = localStorage.getItem("theme");
+if (theme) {
+  document.documentElement.setAttribute("data-theme", theme);
+} else {
+  // Appliquer le thème clair par défaut
+  document.documentElement.setAttribute("data-theme", "light");
+}
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  updateThemeButton(); // Mettre à jour le bouton dès que le DOM est chargé
+  const button = document.querySelector("[data-theme-toggle]");
+  if (button) {
+    button.addEventListener("click", toggleTheme);
+  }
+});
+
+  // Active le mode malvoyant depuis le localStorage au chargement
+  if (localStorage.getItem("malvoyant") === "true") {
+    document.documentElement.classList.add("malvoyant");
   }
 
-  document.body.className = 'theme-' + theme;
-  setCookie('selectedTheme', theme, 30); // Expire dans 30 jours
-}
-
-// Appliquer le thème au chargement
-window.addEventListener('DOMContentLoaded', () => {
-  const theme = getCookie('selectedTheme');
-  if (validThemes.includes(theme)) {
-    setTheme(theme);
-  } else {
-    setTheme('clair'); // Thème par défaut
+  // Bouton pour activer/désactiver le mode malvoyant
+  const btnMalvoyant = document.getElementById("btn-accessibilite");
+  if (btnMalvoyant) {
+    btnMalvoyant.addEventListener("click", () => {
+      document.documentElement.classList.toggle("malvoyant");
+      const isActive = document.documentElement.classList.contains("malvoyant");
+      localStorage.setItem("malvoyant", isActive);
+    });
   }
