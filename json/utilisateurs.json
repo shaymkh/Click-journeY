@@ -1,52 +1,68 @@
 [
-    {
-        "statut": "utilisateur",
-        "firstName": "Salim",
-        "lastName": "Chalkoune",
-        "phone": "0700000000",
-        "email": "salimchk@outlook.com",
-        "dob": "2000-02-28",
-        "address": "10 rue du port 95000 cergy",
-        "motdepasse": "$2b$12$PzVd99EnZww2h9I/Ugnb4OA7wJjaePWPUmYEXy7v56ScZYyQaWfgy"
-    },
-    {
-        "statut": "utilisateur",
-        "firstName": "Nayla",
-        "lastName": "Benabour",
-        "phone": "0706000000",
-        "email": "naylabnb@outlook.com",
-        "dob": "2005-03-30",
-        "address": "10 rue du port 78000 elancourt",
-        "motdepasse": "$2b$12$nbdyieq/KxFvqhVXd82ieeHdYg1DDwnotpmD.bMdCctevdhxI.gJq"
-    },
-    {
-        "statut": "utilisateur",
-        "firstName": "Yasmine",
-        "lastName": "Elkourahi",
-        "phone": "0704000000",
-        "email": "yaselk@outlook.com",
-        "dob": "2006-04-30",
-        "address": "10 rue du port 28100 dreux",
-        "motdepasse": "$2b$12$sOk9WIpBnE.PNMOCQP8ux.X0W0lJlltppnthMzVmaBFAta9irVWD6"
-    },
-    {
-        "statut": "admin",
-        "firstName": "Admin",
-        "lastName": "One",
-        "phone": "0700000001",
-        "email": "admin1@cycity.com",
-        "dob": "1990-01-01",
-        "address": "1 avenue de l'admin, Paris",
-        "motdepasse": "$2b$12$JV9bZTNB7CoyNmDr8V5U/u22yS9OyDRMaRiA1xyJe0xyvQjo43iRu"
-    },
-    {
-        "statut": "admin",
-        "firstName": "Super",
-        "lastName": "Admin",
-        "phone": "0700000002",
-        "email": "admin2@cycity.com",
-        "dob": "1985-05-15",
-        "address": "2 rue admin, Lyon",
-        "motdepasse": "$2b$12$K./7qR2ADCEhZmopfhQa7.jl7K3C/acMrimdSi4dyikFoomzF2WRu"
-    }
+  {
+    "phone": "0600000000",
+    "email": "marwa@mail.com",
+    "motdepasse": "12345678",
+    "firstName": "Marwa",
+    "lastName": "Dkhissi",
+    "statut": "utilisateur"
+  },
+  {
+    "phone": "0600000001",
+    "email": "admin@mail.com",
+    "motdepasse": "admin123",
+    "firstName": "Admin",
+    "lastName": "Root",
+    "statut": "admin"
+  },
+  {
+    "firstName": "Marwa",
+    "lastName": "Dkhissi",
+    "email": "marwa@mail.com",
+    "phone": "0600000000",
+    "statut": "admin",
+    "vip": false,
+    "banni": false,
+    "motdepasse": "azertyyyyyy"
+  },
+  {
+    "firstName": "Admin2",
+    "lastName": "Dupont",
+    "email": "admin2@mail.com",
+    "phone": "0600000001",
+    "statut": "admin",
+    "vip": false,
+    "banni": false,
+    "motdepasse": "admin123"
+  },
+  {
+    "firstName": "John",
+    "lastName": "Doe",
+    "email": "john.doe@example.com",
+    "phone": "0600000002",
+    "statut": "utilisateur",
+    "vip": false,
+    "banni": false,
+    "motdepasse": "userpass1"
+  },
+  {
+    "firstName": "Jane",
+    "lastName": "Smith",
+    "email": "jane.smith@example.com",
+    "phone": "0600000003",
+    "statut": "utilisateur",
+    "vip": true,
+    "banni": false,
+    "motdepasse": "userpass2"
+  },
+  {
+    "firstName": "Bob",
+    "lastName": "Johnson",
+    "email": "bob.johnson@example.com",
+    "phone": "0600000004",
+    "statut": "utilisateur",
+    "vip": false,
+    "banni": true,
+    "motdepasse": "userpass3"
+  }
 ]
