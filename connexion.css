@@ -7,11 +7,10 @@
 }
 
 body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #ecf0f1;
+  overflow: hidden;
+  height: 100vh;
+  background: black;
+  transition: background 0.3s, color 0.3s;
 }
 
 /* Conteneur principal du formulaire */
@@ -92,47 +91,67 @@ button:hover {
         padding: 10px;
     }
 }
-/* Style de la sidebar */
-.sidebar {
-    width: 250px;
-    background-color: #2c3e50;
-    color: white;
-    padding: 20px;
-    height: 100vh;
-    position: fixed;
-    top: 0;
-    left: 0; /* Aligne la sidebar à gauche */
+
+/* 🔹 Barre de navigation propre */
+.navbar {
+  background-color: var(--nav-bg);
+  color: var(--nav-text);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 15px 0;
+  position: fixed;
+  top: 0;
+  left: 0; /* S'assurer que la navbar est bien à gauche */
+  width: 100%;
+  z-index: 1000;
+  transition: background-color 0.3s, color 0.3s;
+  /* Rajoute un padding en haut de la page si nécessaire */
 }
 
-.sidebar h2 {
-    text-align: center;
+.navbar ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
 }
 
-.sidebar ul {
-    list-style: none;
-    padding: 0;
+.navbar ul li {
+  font-size: 16px;
 }
 
-.sidebar ul li {
-    margin: 20px 0;
+.navbar ul li a {
+  color: var(--nav-text);
+  text-decoration: none;
+  padding: 10px 14px;
+  border-radius: 5px;
+  transition: background 0.3s;
 }
 
-.sidebar ul li a {
-    color: white;
-    text-decoration: none;
-    font-size: 18px;
-    display: block;
-    padding: 10px;
-    transition: 0.3s;
+.navbar ul li a:hover {
+  background-color: rgba(0, 0, 0, 0.05);
 }
 
-.sidebar ul li a:hover {
-    background-color: #34495e;
-    border-radius: 5px;
+/* 🔘 Bouton de thème */
+.theme-toggle-btn {
+  background: none;
+  border: 1px solid var(--nav-text);
+  padding: 8px 12px;
+  border-radius: 5px;
+  color: var(--nav-text);
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s, border-color 0.3s;
 }
 
-/* Style de la zone de contenu */
-.content {
-    margin-left: 260px;
-    padding: 20px;
+.theme-toggle-btn:hover {
+  background-color: var(--nav-text);
+  color: var(--nav-bg);
+}
+
+
+.message-erreur {
+    color: red;
+    font-size: 0.9em;
+    margin-top: 5px;
 }
