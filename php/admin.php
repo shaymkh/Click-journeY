@@ -2,7 +2,7 @@
 session_start();
 
 // Vérifier si l'utilisateur est connecté et admin
-if (!isset($_SESSION['utilisateur']) || $_SESSION['utilisateur']['role'] !== 'admin') {
+if (!isset($_SESSION['utilisateur']) || $_SESSION['utilisateur']['statut'] !== 'admin') {
     header('Location: connexion.php');
     exit;
 }
