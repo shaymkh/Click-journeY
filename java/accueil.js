@@ -1,4 +1,4 @@
-/// Fonction de basculement entre le thème clair et sombre
+/// Fonction de basculement entre le thème clair et sombre, chagement du css du a cette regle
 function toggleTheme() {
   const currentTheme = document.documentElement.getAttribute("data-theme");
   const newTheme = currentTheme === "dark" ? "light" : "dark";
@@ -13,7 +13,7 @@ function toggleTheme() {
   updateThemeButton();
 }
 
-//  mettre à jour le bouton de changement de thème
+
 function updateThemeButton() {
   const button = document.querySelector("[data-theme-toggle]");
   if (!button) return;
