@@ -18,7 +18,15 @@
             <li><a href="modifier_profil.html">✏️ Modifier le Profil</a></li>
             <li><a href="destinations.html">🌍 Destinations</a></li>
             <li><a href="admin.html">👨‍💻 Administrateur</a></li>
-             <li>changer le thème</li>
+            <li class="theme-selector">
+                    <span class="theme-label">thème</span>
+                    <div class="dropdown">
+                    <div onclick="setTheme('sombre')">Mode sombre</div>
+                    <div onclick="setTheme('clair')">Mode clair</div>
+                    <div onclick="setTheme('malvoyant')">Malvoyant</div>
+		            <div onclick="setTheme('reset')">♻️ Réinitialiser</div>
+                    </div>
+            </li>
         </ul>
     </nav>
 
