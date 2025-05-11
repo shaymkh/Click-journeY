@@ -1,5 +1,5 @@
 // Fonction de basculement entre le thème clair et sombre, chagement du css du a cette regle
-// le fichier devrait plutot s'appeler interface.js 
+// le fichier devrait plutot s'appeler  interface.js 
 function toggleTheme() {
   const currentTheme = document.documentElement.getAttribute("data-theme");
   const newTheme = currentTheme === "dark" ? "light" : "dark";
