@@ -1,6 +1,10 @@
 <?php
 session_start();
-
+// Redirection si utilisateur déjà connecté
+if (isset($_SESSION['login'])) {
+    header('Location: accueil.html');
+    exit;
+}
 // Chemin vers le fichier JSON des utilisateurs
 $cheminUsers = __DIR__ . '/../info/utilisateurs.json';
 
