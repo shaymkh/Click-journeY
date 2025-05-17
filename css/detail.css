@@ -1,0 +1,97 @@
+/* detail.css */
+
+:root {
+  --bg: #ffffff;
+  --text: #333333;
+  --accent: #ff5a5f;
+  --field-bg: #f9f9f9;
+}
+[data-theme="dark"] {
+  --bg: #121212;
+  --text: #f0f0f0;
+  --accent: #ff8c42;
+  --field-bg: #1e1e1e;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Décalage pour navbar fixe */
+.detail-section {
+  padding: 6rem 2rem 2rem;
+  max-width: 800px;
+  margin: auto;
+}
+
+.detail-section h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  color: #2C3E50;
+}
+
+.detail-section p {
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  color: var(--text);
+}
+
+.detail-section form {
+  background: var(--field-bg);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.detail-section fieldset {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 1rem;
+  background: var(--bg);
+}
+
+detail-section legend, .detail-section fieldset legend {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.detail-section label {
+  display: block;
+  margin-bottom: 0.25rem;
+  font-size: 0.95rem;
+}
+
+.detail-section select {
+  width: 100%;
+  padding: 0.6rem;
+  margin-bottom: 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.detail-section .btn {
+  align-self: flex-start;
+  padding: 0.8rem 1.5rem;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.3s;
+}
+
+.detail-section .btn:hover {
+  opacity: 0.9;
+}
