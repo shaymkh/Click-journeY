@@ -201,3 +201,23 @@ html, body {
   font-size: 0.9rem;
   color: var(--text);
 }
+/* Espace en haut pour ne pas masquer sous la navbar fixe */
+.dest-preview {
+  padding: 6rem 2rem 2rem; /* 6rem de haut → nav (4rem) + gap (2rem) */
+}
+
+/* Si tu veux un écart supplémentaire avant la 1ʳᵉ section */
+.dest-preview:first-of-type {
+  margin-top: 4rem;
+}
+
+/* Titre bien au-dessus */
+.dest-preview h2 {
+  position: relative;
+  z-index: 1;
+  color: var(--text);    /* ou #2C3E50 */
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
