@@ -1,68 +1,46 @@
 [
   {
-    "phone": "0600000000",
-    "email": "marwa@mail.com",
-    "motdepasse": "12345678",
-    "firstName": "Marwa",
-    "lastName": "Dkhissi",
-    "statut": "utilisateur"
+    "login": "admin1",
+    "mot_de_passe": "34FHTyyy",  
+    "role": "admin",
+    "email": "admin1@exemple.com",
+    "date_inscription": "2025-05-01",
+    "derniere_connexion": null,
+    "voyages_achetes": []
   },
   {
-    "phone": "0600000001",
-    "email": "admin@mail.com",
-    "motdepasse": "admin123",
-    "firstName": "Admin",
-    "lastName": "Root",
-    "statut": "admin"
+    "login": "admin2",
+    "mot_de_passe": "45HYPROyy",  
+    "role": "admin",
+    "email": "admin2@exemple.com",
+    "date_inscription": "2025-05-05",
+    "derniere_connexion": null,
+    "voyages_achetes": []
   },
   {
-    "firstName": "Marwa",
-    "lastName": "Dkhissi",
-    "email": "marwa@mail.com",
-    "phone": "0600000000",
-    "statut": "admin",
-    "vip": false,
-    "banni": false,
-    "motdepasse": "azertyyyyyy"
+    "login": "jeandupont",
+    "mot_de_passe": "1234yyyy"
+    "email": "jean.dupont@exemple.com",
+    "date_inscription": "2025-05-10",
+    "derniere_connexion": null,
+    "voyages_achetes": []
   },
   {
-    "firstName": "Admin2",
-    "lastName": "Dupont",
-    "email": "admin2@mail.com",
-    "phone": "0600000001",
-    "statut": "admin",
-    "vip": false,
-    "banni": false,
-    "motdepasse": "admin123"
+    "login": "mariedurand",
+    "mot_de_passe": "KIJG67yyy",  
+    "role": "user",
+    "email": "marie.durand@exemple.com",
+    "date_inscription": "2025-05-12",
+    "derniere_connexion": null,
+    "voyages_achetes": []
   },
   {
-    "firstName": "John",
-    "lastName": "Doe",
-    "email": "john.doe@example.com",
-    "phone": "0600000002",
-    "statut": "utilisateur",
-    "vip": false,
-    "banni": false,
-    "motdepasse": "userpass1"
-  },
-  {
-    "firstName": "Jane",
-    "lastName": "Smith",
-    "email": "jane.smith@example.com",
-    "phone": "0600000003",
-    "statut": "utilisateur",
-    "vip": true,
-    "banni": false,
-    "motdepasse": "userpass2"
-  },
-  {
-    "firstName": "Bob",
-    "lastName": "Johnson",
-    "email": "bob.johnson@example.com",
-    "phone": "0600000004",
-    "statut": "utilisateur",
-    "vip": false,
-    "banni": true,
-    "motdepasse": "userpass3"
+    "login": "ahmedtiger",
+    "mot_de_passe": "rt6hyyyy",  
+    "role": "user",
+    "email": "ahmed.tiger@exemple.com",
+    "date_inscription": "2025-05-15",
+    "derniere_connexion": null,
+    "voyages_achetes": []
   }
 ]
