@@ -1,131 +1,404 @@
 [
-    {
-        "titre": "Aventure à Tanger",
-        "dates": {
-            "start": "2025-05-01",
-            "end": "2025-05-07"
+  {
+    "id": 1,
+    "titre": "Escapade à Londres - Grand Classique",
+    "date_debut": "2025-07-01",
+    "date_fin": "2025-07-05",
+    "nb_etapes": 3,
+    "prix_base": 950.00,
+    "etapes": [
+      {
+        "titre": "Arrivée & Installation",
+        "options": {
+          "hebergement": {"Standard":0,"Confort":100,"Luxe":200},
+          "transport": {"Bus":0,"Métro":50,"Taxi":150},
+          "repas": {"Petit-déjeuner":0,"Demi-pension":30,"Pension complète":60}
         },
-        "etapes": [
-            {
-                "titre": "Arrivée à Tanger",
-                "dates": {
-                    "start": "2025-05-01",
-                    "end": "2025-05-02"
-                },
-                "lieu": "Tanger",
-                "options": {
-                    "heber": "Hôtel 3 étoiles",
-                    "activités": [
-                        "Visite guidée de la médina",
-                        "Dégustation de cuisine locale"
-                    ],
-                    "transport": "Transfert aéroport-hôtel"
-                }
-            },
-            {
-                "titre": "Excursion aux montagnes Rif",
-                "dates": {
-                    "start": "2025-05-03",
-                    "end": "2025-05-05"
-                },
-                "lieu": "Montagnes Rif",
-                "options": {
-                    "heber": "Campement traditionnel",
-                    "activités": [
-                        "Randonnée",
-                        "Visite de villages berbères"
-                    ],
-                    "transport": "Véhicule tout terrain"
-                }
-            }
-        ],
-        "prix": 1200,
-        "status": "en cours de modification"
-    },
-    {
-        "titre": "Séjour à Amsterdam",
-        "dates": {
-            "start": "2025-06-10",
-            "end": "2025-06-15"
+        "options_defaut": {"hebergement":"Standard","transport":"Bus","repas":"Petit-déjeuner"}
+      },
+      {
+        "titre": "Visite du British Museum",
+        "options": {
+          "billet": {"Standard":0,"Premium":20},
+          "guide": {"Sans guide":0,"Guide Français":40,"Guide Anglais":30},
+          "transport": {"Bus":0,"Métro":50}
         },
-        "etapes": [
-            {
-                "titre": "Découverte d'Amsterdam",
-                "dates": {
-                    "start": "2025-06-10",
-                    "end": "2025-06-12"
-                },
-                "lieu": "Amsterdam",
-                "options": {
-                    "heber": "Appartement",
-                    "activités": [
-                        "Visite des musées",
-                        "Balade en bateau sur les canaux"
-                    ],
-                    "transport": "Transport public illimité"
-                }
-            },
-            {
-                "titre": "Excursion dans les champs de tulipes",
-                "dates": {
-                    "start": "2025-06-13",
-                    "end": "2025-06-14"
-                },
-                "lieu": "Lisse",
-                "options": {
-                    "heber": "Chambre d'hôte",
-                    "activités": [
-                        "Visite des jardins Keukenhof",
-                        "Photo dans les champs de tulipes"
-                    ],
-                    "transport": "Navette"
-                }
-            }
-        ],
-        "prix": 1500,
-        "status": "payé"
-    },
-    {
-        "titre": "Séjour à New York",
-        "dates": {
-            "start": "2025-07-01",
-            "end": "2025-07-10"
+        "options_defaut": {"billet":"Standard","guide":"Sans guide","transport":"Métro"}
+      },
+      {
+        "titre": "Soirée dans un pub historique",
+        "options": {
+          "formule": {"Boissons seules":0,"Boissons + Snacks":20},
+          "table_avec_vue": {"Non":0,"Oui":15}
         },
-        "etapes": [
-            {
-                "titre": "Découverte de Manhattan",
-                "dates": {
-                    "start": "2025-07-01",
-                    "end": "2025-07-04"
-                },
-                "lieu": "New York",
-                "options": {
-                    "heber": "Hôtel 4 étoiles",
-                    "activités": [
-                        "Visite de la Statue de la Liberté",
-                        "Promenade à Central Park"
-                    ],
-                    "transport": "Pass métro illimité"
-                }
-            },
-            {
-                "titre": "Visite des musées de New York",
-                "dates": {
-                    "start": "2025-07-05",
-                    "end": "2025-07-07"
-                },
-                "lieu": "New York",
-                "options": {
-                    "heber": "Appartement",
-                    "activités": [
-                        "Visite du musée d'Art Moderne",
-                        "Exposition à l'Empire State Building"
-                    ],
-                    "transport": "Transport privé"
-                }
-            }
-        ],
-        "prix": 2500,
-        "status": "payé"
-    }
+        "options_defaut": {"formule":"Boissons seules","table_avec_vue":"Non"}
+      }
+    ]
+  },
+
+  {
+    "id": 2,
+    "titre": "Weekend Royal à Londres",
+    "date_debut": "2025-08-10",
+    "date_fin": "2025-08-12",
+    "nb_etapes": 2,
+    "prix_base": 600.00,
+    "etapes": [
+      {
+        "titre": "Visite du Palais de Buckingham",
+        "options": {
+          "billet": {"Standard":0,"Accès VIP":50},
+          "transport": {"Bus":0,"Taxi":80}
+        },
+        "options_defaut": {"billet":"Standard","transport":"Bus"}
+      },
+      {
+        "titre": "Croisière sur la Tamise",
+        "options": {
+          "croisiere": {"Standard":0,"Dîner inclus":70},
+          "emplacement": {"Intérieur":0,"Extérieur":20}
+        },
+        "options_defaut": {"croisiere":"Standard","emplacement":"Intérieur"}
+      }
+    ]
+  },
+
+  {
+    "id": 3,
+    "titre": "Tour Culturel de Londres",
+    "date_debut": "2025-09-15",
+    "date_fin": "2025-09-20",
+    "nb_etapes": 4,
+    "prix_base": 1400.00,
+    "etapes": [
+      {
+        "titre": "Visite de la Tour de Londres",
+        "options": {"billet":{"Standard":0,"Audio-guide":15}},
+        "options_defaut": {"billet":"Standard"}
+      },
+      {
+        "titre": "Découverte du Tate Modern",
+        "options": {"billet":{"Standard":0,"Atelier artistique":30}},
+        "options_defaut": {"billet":"Standard"}
+      },
+      {
+        "titre": "Promenade à Covent Garden",
+        "options": {"guide":{"Sans guide":0,"Guide local":25}},
+        "options_defaut": {"guide":"Sans guide"}
+      },
+      {
+        "titre": "Spectacle au West End",
+        "options": {"place":{"Standard":0,"Premium":50}},
+        "options_defaut": {"place":"Standard"}
+      }
+    ]
+  },
+
+  {
+    "id": 4,
+    "titre": "Week-end à New York Classique",
+    "date_debut": "2025-08-15",
+    "date_fin": "2025-08-18",
+    "nb_etapes": 2,
+    "prix_base": 1450.00,
+    "etapes": [
+      {
+        "titre": "Découverte de Manhattan",
+        "options": {"transport":{"Subway":0,"Taxi":100}},
+        "options_defaut": {"transport":"Subway"}
+      },
+      {
+        "titre": "Visite de la Statue de la Liberté",
+        "options": {"billet":{"Standard":0,"Accès sommet":25}},
+        "options_defaut": {"billet":"Standard"}
+      }
+    ]
+  },
+
+  {
+    "id": 5,
+    "titre": "City-pass New York",
+    "date_debut": "2025-10-01",
+    "date_fin": "2025-10-06",
+    "nb_etapes": 3,
+    "prix_base": 1800.00,
+    "etapes": [
+      {
+        "titre": "Pass 3 musées",
+        "options": {"pass":{"3 sites":0,"5 sites":50,"7 sites":100}},
+        "options_defaut": {"pass":"3 sites"}
+      },
+      {
+        "titre": "Transport illimité",
+        "options": {"metro":{"1 jour":0,"3 jours":30}},
+        "options_defaut": {"metro":"1 jour"}
+      },
+      {
+        "titre": "Croisière Circle Line",
+        "options": {"bateau":{"Standard":0,"Dîner":75}},
+        "options_defaut": {"bateau":"Standard"}
+      }
+    ]
+  },
+
+  {
+    "id": 6,
+    "titre": "Noël à New York",
+    "date_debut": "2025-12-20",
+    "date_fin": "2025-12-27",
+    "nb_etapes": 4,
+    "prix_base": 2600.00,
+    "etapes": [
+      {
+        "titre": "Marché de Noël à Bryant Park",
+        "options": {"visite":{"Standard":0,"Chauffeur privé":120}},
+        "options_defaut": {"visite":"Standard"}
+      },
+      {
+        "titre": "Patinage à Rockefeller Center",
+        "options": {"patin":{"Location chaussures":0,"Cours patin":50}},
+        "options_defaut": {"patin":"Location chaussures"}
+      },
+      {
+        "titre": "Spectacle Radio City",
+        "options": {"place":{"Standard":0,"Premium":80}},
+        "options_defaut": {"place":"Standard"}
+      },
+      {
+        "titre": "Dîner de réveillon",
+        "options": {"menu":{"Standard":0,"Gastronomique":200}},
+        "options_defaut": {"menu":"Standard"}
+      }
+    ]
+  },
+
+  {
+    "id": 7,
+    "titre": "Découverte de Tanger Basique",
+    "date_debut": "2025-09-05",
+    "date_fin": "2025-09-10",
+    "nb_etapes": 3,
+    "prix_base": 780.00,
+    "etapes": [
+      {
+        "titre": "Visite de la Médina",
+        "options": {"guide":{"Sans guide":0,"Guide local":20}},
+        "options_defaut": {"guide":"Sans guide"}
+      },
+      {
+        "titre": "Journée plage",
+        "options": {"transfert":{"Minibus":0,"Taxi":25}},
+        "options_defaut": {"transfert":"Minibus"}
+      },
+      {
+        "titre": "Soirée berbère",
+        "options": {"spectacle":{"Standard":0,"VIP":40}},
+        "options_defaut": {"spectacle":"Standard"}
+      }
+    ]
+  },
+
+  {
+    "id": 8,
+    "titre": "Festival de Tanger",
+    "date_debut": "2026-01-15",
+    "date_fin": "2026-01-20",
+    "nb_etapes": 2,
+    "prix_base": 920.00,
+    "etapes": [
+      {
+        "titre": "Billet festival",
+        "options": {"billet":{"Standard":0,"VIP":100}},
+        "options_defaut": {"billet":"Standard"}
+      },
+      {
+        "titre": "Hébergement festival",
+        "options": {"hotel":{"3 étoiles":0,"4 étoiles":50,"5 étoiles":120}},
+        "options_defaut": {"hotel":"3 étoiles"}
+      }
+    ]
+  },
+
+  {
+    "id": 9,
+    "titre": "Circuit Méditerranée & Tanger",
+    "date_debut": "2025-10-10",
+    "date_fin": "2025-10-17",
+    "nb_etapes": 4,
+    "prix_base": 1250.00,
+    "etapes": [
+      {
+        "titre": "Croisière cap Spartel",
+        "options": {"bateau":{"Standard":0,"Confort":60}},
+        "options_defaut": {"bateau":"Standard"}
+      },
+      {
+        "titre": "Visite de la grotte d’Hercule",
+        "options": {"guide":{"Sans guide":0,"Guide privé":30}},
+        "options_defaut": {"guide":"Sans guide"}
+      },
+      {
+        "titre": "Soirée couscous",
+        "options": {"menu":{"Végétarien":0,"Traditionnel":25}},
+        "options_defaut": {"menu":"Traditionnel"}
+      },
+      {
+        "titre": "Détente sur plage",
+        "options": {"transat":{"Standard":0,"Premium":15}},
+        "options_defaut": {"transat":"Standard"}
+      }
+    ]
+  },
+
+  {
+    "id": 10,
+    "titre": "Balade à Amsterdam",
+    "date_debut": "2025-10-01",
+    "date_fin": "2025-10-06",
+    "nb_etapes": 3,
+    "prix_base": 1150.00,
+    "etapes": [
+      {
+        "titre": "Tour des canaux",
+        "options": {"bateau":{"Standard":0,"Verre de vin":20}},
+        "options_defaut": {"bateau":"Standard"}
+      },
+      {
+        "titre": "Visite musée Van Gogh",
+        "options": {"billet":{"Sans file d’attente":0,"Audio-guide":15}},
+        "options_defaut": {"billet":"Sans file d’attente"}
+      },
+      {
+        "titre": "Dîner crêpes hollandaises",
+        "options": {"menu":{"Simple":0,"Gourmand":30}},
+        "options_defaut": {"menu":"Simple"}
+      }
+    ]
+  },
+
+  {
+    "id": 11,
+    "titre": "Week-end Romantique Amsterdam",
+    "date_debut": "2026-02-14",
+    "date_fin": "2026-02-17",
+    "nb_etapes": 2,
+    "prix_base": 980.00,
+    "etapes": [
+      {
+        "titre": "Croisière romantique",
+        "options": {"bateau":{"Standard":0,"Champagne":50}},
+        "options_defaut": {"bateau":"Standard"}
+      },
+      {
+        "titre": "Hôtel boutique",
+        "options": {"chambre":{"Classique":0,"Suite":120}},
+        "options_defaut": {"chambre":"Classique"}
+      }
+    ]
+  },
+
+  {
+    "id": 12,
+    "titre": "Tulipes & Canaux",
+    "date_debut": "2026-04-01",
+    "date_fin": "2026-04-07",
+    "nb_etapes": 4,
+    "prix_base": 2100.00,
+    "etapes": [
+      {
+        "titre": "Visite des champs de tulipes",
+        "options": {"visite":{"Standard":0,"Visite guidée":40}},
+        "options_defaut": {"visite":"Standard"}
+      },
+      {
+        "titre": "Tour vélo",
+        "options": {"velo":{"Standard":0,"Vélo électrique":20}},
+        "options_defaut": {"velo":"Standard"}
+      },
+      {
+        "titre": "Croisière sur canaux",
+        "options": {"bateau":{"Standard":0,"Dîner":80}},
+        "options_defaut": {"bateau":"Standard"}
+      },
+      {
+        "titre": "Dîner dans un restaurant local",
+        "options": {"menu":{"Standard":0,"Gastronomique":70}},
+        "options_defaut": {"menu":"Standard"}
+      }
+    ]
+  },
+
+  {
+    "id": 13,
+    "titre": "Séjour Luxe à Dubaï",
+    "date_debut": "2026-01-05",
+    "date_fin": "2026-01-10",
+    "nb_etapes": 2,
+    "prix_base": 2800.00,
+    "etapes": [
+      {
+        "titre": "Hôtel 5 étoiles Burj Khalifa",
+        "options": {"chambre":{"Standard":0,"Suite Royale":800}},
+        "options_defaut": {"chambre":"Standard"}
+      },
+      {
+        "titre": "Dîner Bateaux Dhow",
+        "options": {"formule":{"Standard":0,"Formule prestige":200}},
+        "options_defaut": {"formule":"Standard"}
+      }
+    ]
+  },
+
+  {
+    "id": 14,
+    "titre": "Aventure Désert & Dubaï",
+    "date_debut": "2026-03-10",
+    "date_fin": "2026-03-17",
+    "nb_etapes": 3,
+    "prix_base": 1950.00,
+    "etapes": [
+      {
+        "titre": "Safari dans le désert",
+        "options": {"véhicule":{"4x4":0,"SUV de luxe":150}},
+        "options_defaut": {"véhicule":"4x4"}
+      },
+      {
+        "titre": "Nuit en camp bédouin",
+        "options": {"tente":{"Standard":0,"Confort":100}},
+        "options_defaut": {"tente":"Standard"}
+      },
+      {
+        "titre": "Visite de Dubaï Mall",
+        "options": {"billet":{"Standard":0,"Billet Attrait":40}},
+        "options_defaut": {"billet":"Standard"}
+      }
+    ]
+  },
+
+  {
+    "id": 15,
+    "titre": "Expo Dubaï 2025",
+    "date_debut": "2025-11-01",
+    "date_fin": "2025-11-08",
+    "nb_etapes": 3,
+    "prix_base": 1500.00,
+    "etapes": [
+      {
+        "titre": "Accès Pavillons",
+        "options": {"pass":{"Standard":0,"Global Pass":120}},
+        "options_defaut": {"pass":"Standard"}
+      },
+      {
+        "titre": "Transport Expo",
+        "options": {"navette":{"Inclusion bus":0,"Taxi inclus":80}},
+        "options_defaut": {"navette":"Inclusion bus"}
+      },
+      {
+        "titre": "Visite guidée Expo",
+        "options": {"guide":{"Sans guide":0,"Guide officiel":60}},
+        "options_defaut": {"guide":"Sans guide"}
+      }
+    ]
+  }
 ]
+
