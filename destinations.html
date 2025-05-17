@@ -1,0 +1,123 @@
+<!-- destinations.html -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Recherche de voyages – CY City Adventure</title>
+  <link rel="stylesheet" href="destinations.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="interface">
+    <div class="logo">CY City Adventure</div>
+    <ul class="interface-links">
+      <li><a href="homepage.html">Accueil</a></li>
+      <li><a href="presentationn.html">Présentation</a></li>
+      <li><a href="inscription.html">S'inscrire</a></li>
+      <li><a href="login.html">Se connecter</a></li>
+      <li><a href="profil.html">Profil</a></li>
+      <li><a href="admin.html">Administrateur</a></li>
+    </ul>
+ <button id="theme" class="theme">☀️</button>
+  </nav>
+
+  <!-- Section Recherche Avancée -->
+  <section class="search-section">
+    <h1>Rechercher un voyage</h1>
+    <form class="search-form">
+      <div class="field-group">
+        <label for="from-date">Date de départ</label>
+        <input type="date" id="from-date" name="from-date" required>
+      </div>
+      <div class="field-group">
+        <label for="to-date">Date de retour</label>
+        <input type="date" id="to-date" name="to-date" required>
+      </div>
+      <div class="field-group">
+        <label for="destination">Destination</label>
+        <select id="destination" name="destination" required>
+          <option value="">Sélectionnez...</option>
+          <option value="Londres">Londres</option>
+          <option value="New York">New York</option>
+          <option value="Tanger">Tanger</option>
+          <option value="Amsterdam">Amsterdam</option>
+	  <option value="Dubai">Dubai</option>
+        </select>
+      </div>
+      <fieldset class="options-group">
+        <legend>Options</legend>
+        <label><input type="checkbox" name="options" value="vol"> Vol inclus</label>
+        <label><input type="checkbox" name="options" value="hotel"> Hôtel</label>
+        <label><input type="checkbox" name="options" value="visite"> Visites guidées</label>
+        <label><input type="checkbox" name="options" value="assurance"> Assurance voyage</label>
+      </fieldset>
+      <button type="submit" class="btn">Lancer la recherche</button>
+    </form>
+
+    <!-- Résultats -->
+    <div class="results">
+      <!-- Exemple de carte de résultat -->
+      <div class="card">
+        <h3>Paris – Offre non disponible</h3>
+        <p>Sélectionnez vos filtres et cliquez sur « Lancer la recherche ». Les résultats s’afficheront ici.</p>
+      </div>
+    </div>
+  </section>
+
+ <section class="dest-preview">
+    <h2>Nos destinations phares</h2>
+    <div class="cards-dest">
+      <!-- Londres -->
+      <div class="destination-card" id="londres">
+        <div class="destination-image" style="background-image:url('https://thumbs.dreamstime.com/b/capture-d-écran-verticale-un-paysage-urbain-à-londres-avec-big-ben-et-des-gratte-ciels-une-photo-aérienne-161091972.jpg');"></div>
+        <h3>Londres</h3>
+        <p>Découvrez le Big Ben, Buckingham Palace et l’ambiance unique des pubs londoniens.</p>
+      </div>
+      <!-- New York -->
+      <div class="destination-card" id="newyork">
+        <div class="destination-image" style="background-image:url('https://as1.ftcdn.net/v2/jpg/04/32/59/76/1000_F_432597670_HvlD13oGQP9Bf3uerclkOsIQ35YZFuZN.jpg');"></div>
+        <h3>New York</h3>
+        <p>La ville qui ne dort jamais, avec Times Square, Central Park, et bien plus encore !</p>
+      </div>
+      <!-- Tanger -->
+      <div class="destination-card" id="tanger">
+        <div class="destination-image" style="background-image:url('https://res.cloudinary.com/lastminute/image/upload/c_limit,h_999999,w_1024/f_auto/q_auto:eco/q_auto/v1717658882/r3ar0avxekugtyzhd8ns.jpg');"></div>
+        <h3>Tanger</h3>
+        <p>Venez découvrir la médina de Tanger, un mélange fascinant de culture et de paysages méditerranéens.</p>
+      </div>
+      <!-- Amsterdam -->
+      <div class="destination-card" id="amsterdam">
+        <div class="destination-image" style="background-image:url('https://img.freepik.com/photos-premium/maisons-eau-amsterdam-tables-cafe-pont-grand-paysage-urbain-verticale_120897-140.jpg');"></div>
+        <h3>Amsterdam</h3>
+        <p>Promenez-vous le long des canaux et explorez les musées de cette ville charmante et accueillante.</p>
+      </div>
+      <!-- Dubaï -->
+      <div class="destination-card" id="dubai">
+        <div class="destination-image" style="background-image:url('https://www.shutterstock.com/image-photo/dubai-skyline-sunset-city-lights-600nw-1302603421.jpg');"></div>
+        <h3>Dubaï</h3>
+        <p>Venez découvrir la ville du luxe et de l'innovation avec ses gratte-ciel impressionnants et ses malls géants.</p>
+      </div>
+    </div>
+  </section>
+
+ <!-- Bascule thème -->
+   <script src="homepage.js"></script>
+  <script>
+
+    // Gestion simple de la soumission pour démonstration
+    document.querySelector('.search-form').addEventListener('submit', e => {
+      e.preventDefault();
+      // Ici, appel AJAX ou redirection avec query params
+      // pour l'exemple, on affiche simplement une alerte
+      alert('Recherche lancée : ' +
+        document.getElementById('destination').value +
+        ' du ' + document.getElementById('from-date').value +
+        ' au ' + document.getElementById('to-date').value
+      );
+    });
+  </script>
+</body>
+</html>

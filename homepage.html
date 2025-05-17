@@ -1,0 +1,135 @@
+<?php
+session_start();
+?>
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CY City Adventure</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="homepage.css">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="interface">
+    <div class="logo">CY City Adventure</div>
+    <ul class="interface-links">
+      <li><a href="#presentation">Accueil</a></li>
+      <li><a href="#about">Qui sommes-nous ?</a></li>
+      <li><a href="#destinations">Destinations</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#avis">Avis</a></li>
+      <li><a href="presentationn.html">Présentation</a></li>
+    </ul>
+    <button id="theme" class="theme">☀️</button>
+  </nav>
+<!--  Diaporama -->
+
+        <div class="slide">
+            <img src="https://unsacsurledos.com/wp-content/uploads/2023/12/londres-en-decembre.jpg" alt="Londres en décembre">
+        </div>
+        <div class="slide">
+            <img src="https://cdn.generationvoyage.fr/2024/01/Vue-sur-les-toits-de-Dubai-la-nuit-avec-Burj-Khalifa.jpeg" alt="Dubaï de nuit">
+        </div>
+        <div class="slide">
+            <img src="https://res.cloudinary.com/dtljonz0f/image/upload/f_auto/q_auto/v1/gc-v1/new-york/andreas-kruck-l8ypMiU1Hio-unsplash.jpg" alt="New York">
+        </div>
+        <div class="slide">
+            <img src="https://cms.finnair.com/resource/blob/747040/51db80b31ed1cdf10a5520699a8e673c/amsterdam-main-data.jpg" alt="Amsterdam">
+        </div>
+        <div class="slide">
+            <img src="https://i0.wp.com/www.mahaara.fr/wp-content/uploads/2024/03/Tanger-vue-depuis-les-remparts-Maroc-Coucher-de-Soleil-Mahaara-scaled.jpg?fit=2560%2C1707&ssl=1" alt="Tanger">
+        </div>
+    </div>
+
+  <!-- Section presentation -->
+  <header id="presentation" class="presentation-section">
+    <div class="presentation-content">
+      <h1 class="presentation-title">Plongez dans l'aventure urbaine</h1>
+      <p class="presentation-subtitle">Découvrez les villes les plus iconiques comme jamais auparavant</p>
+      <a href="presentationn.html" class="btn presentation-btn">commencer</a>
+    </div>
+    <div class="presentation-slideshow"></div>
+  </header>
+
+  <!-- À propos de nous -->
+  <section id="about" class="section bg-light">
+    <h2 class="section-title">Qui sommes-nous ?</h2>
+    <p class="about-text">Chez CY City Adventure, nous sommes passionnés par la découverte urbaine. Notre équipe de voyageurs experts conçoit des itinéraires sur mesure pour vous faire vivre des expériences authentiques dans les plus grandes métropoles du monde.</p>
+  </section>
+
+  <!-- Destinations phares -->
+  <section id="destinations" class="section">
+    <h2 class="section-title">Destinations phares</h2>
+    <div class="dest-tiles">
+      <div class="tile" style="background-image:url('https://as1.ftcdn.net/v2/jpg/04/32/59/76/1000_F_432597670_HvlD13oGQP9Bf3uerclkOsIQ35YZFuZN.jpg');">
+        <div class="tile-overlay">
+          <h3>New York</h3>
+        </div>
+      </div>
+      <div class="tile" style="background-image:url('https://thumbs.dreamstime.com/b/capture-d-écran-verticale-un-paysage-urbain-à-londres-avec-big-ben-et-des-gratte-ciels-une-photo-aérienne-161091972.jpg');">
+        <div class="tile-overlay">
+          <h3>Londres</h3>
+        </div>
+      </div>
+      <div class="tile" style="background-image:url('https://res.cloudinary.com/lastminute/image/upload/c_limit,h_999999,w_1024/f_auto/q_auto:eco/q_auto/v1717658882/r3ar0avxekugtyzhd8ns.jpg');">
+        <div class="tile-overlay">
+          <h3>Tanger</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Nos services -->
+  <section id="services" class="section">
+    <h2 class="section-title">Nos Services</h2>
+    <div class="cards">
+      <div class="card">
+        <div class="card-icon">🗺️</div>
+        <h3>Itinéraire sur-mesure</h3>
+        <p>Profitez d'un parcours taillé pour vous, du premier pas à la dernière photo.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">💬</div>
+        <h3>Support 24/7</h3>
+        <p>Une équipe locale à votre écoute, à toute heure, où que vous soyez.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">💸</div>
+        <h3>Offres exclusives</h3>
+        <p>Des tarifs négociés pour rendre chaque voyage accessible.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Avis voyageurs -->
+  <section id="avis" class="section bg-light">
+    <h2 class="section-title">Avis voyageurs</h2>
+    <div class="avis-slider">
+      <div class="avis">
+        <p>« Un voyage inoubliable à Tanger grâce à CY City Adventure ! »</p>
+        <span>— Mondir, 28 ans</span>
+      </div>
+      <div class="avis">
+        <p>« Organisation parfaite, guide francophone à Tokyo. Merci ! »</p>
+        <span>— Shayma, 34 ans</span>
+      </div>
+      <div class="avis">
+        <p>« Des conseils avisés et un service 5 étoiles à New York. »</p>
+        <span>— Charline, 31 ans</span>
+      </div>
+    </div>
+  </section>
+
+  
+  <!-- Pied de page -->
+  <footer class="footer">
+    <p>&copy; 2025 CY City Adventure. Tous droits réservés.</p>
+  </footer>
+
+  <script src="homepage.js"></script>
+</body>
+</html>
+
