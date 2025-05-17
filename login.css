@@ -1,0 +1,131 @@
+/* login.css */
+
+:root {
+  --bg: #ffffff;
+  --text: #333333;
+  --accent: #ff5a5f;
+  --interface-bg: rgba(255,255,255,0.9);
+}
+[data-theme="dark"] {
+  --bg: #121212;
+  --text: #f0f0f0;
+  --accent: #ff8c42;
+  --interface-bg: rgba(18,18,18,0.9);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+html, body {
+  height: 100%;
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* Interface (navbar) */
+.interface {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: var(--interface-bg);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  backdrop-filter: blur(10px);
+  z-index: 10;
+}
+.interface .logo {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #2C.....;
+}
+.interface-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+.interface-links a {
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 500;
+  transition: color .3s;
+}
+.interface-links a:hover {
+  color: var(--accent);
+}
+.theme {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: var(--text);
+}
+
+/* Section de connexion */
+.login-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+.login-form {
+  background: var(--bg);
+  padding: 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  width: 100%;
+  max-width: 360px;
+  text-align: center;
+}
+.login-form h2 {
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+  color: #2C3E50;
+}
+.form-group {
+  margin-bottom: 1.2rem;
+  text-align: left;
+}
+.form-group label {
+  display: block;
+  margin-bottom: 0.4rem;
+  font-size: 0.9rem;
+}
+.form-group input {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+.btn {
+  width: 100%;
+  padding: 0.8rem;
+  background: #2C3E50;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 0.8rem;
+}
+.btn:hover {
+  opacity: 0.9;
+}
+.alt-link {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+}
+.alt-link a {
+  color: #2C3E50;
+  text-decoration: none;
+}
+.alt-link a:hover {
+  text-decoration: underline;
+}

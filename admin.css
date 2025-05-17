@@ -1,0 +1,143 @@
+/* admin.css */
+
+:root {
+  --bg: #ffffff;
+  --text: #333333;
+  --accent: #ff5a5f;
+  --interface-bg: rgba(255,255,255,0.9);
+  --table-bg: #f9f9f9;
+  --row-hover: rgba(0,0,0,0.05);
+}
+[data-theme="dark"] {
+  --bg: #121212;
+  --text: #f0f0f0;
+  --accent: #ff8c42;
+  --interface-bg: rgba(18,18,18,0.9);
+  --table-bg: #1e1e1e;
+  --row-hover: rgba(255,255,255,0.05);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+html, body {
+  height: 100%;
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* Navbar */
+.interface {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: var(--interface-bg);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  backdrop-filter: blur(10px);
+  z-index: 10;
+}
+.interface .logo {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #2C3E50;
+}
+.interface-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+.interface-links a {
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 500;
+  transition: color .3s;
+}
+.interface-links a:hover {
+  color: var(--accent);
+}
+.theme {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: var(--text);
+}
+
+/* Section Admin */
+.admin-section {
+  padding: 6rem 2rem 2rem; /* espace pour navbar */
+}
+.admin-section h1 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #2C3E50;
+  text-align: center;
+}
+
+/* Tableau utilisateurs */
+.table-container {
+  overflow-x: auto;
+}
+.users-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--table-bg);
+  margin: auto;
+  max-width: 1000px;
+}
+.users-table th,
+.users-table td {
+  padding: 0.8rem 1rem;
+  text-align: left;
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+.users-table th {
+  background: #2C3E50;
+  color: #fff;
+  font-weight: 600;
+}
+.users-table tbody tr:hover {
+  background: var(--row-hover);
+}
+
+/* Statuts VIP/Banni */
+.status {
+  display: inline-block;
+  padding: 0.2rem 0.6rem;
+  border-radius: 12px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+.status.yes {
+  background: #4caf50;
+  color: #fff;
+}
+.status.no {
+  background: #e0e0e0;
+  color: #555;
+}
+
+/* Boutons d’action */
+.action-btn {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  margin-right: 0.5rem;
+  transition: transform .2s;
+}
+.vip-btn:hover {
+  color: gold;
+  transform: scale(1.2);
+}
+.ban-btn:hover {
+  color: crimson;
+  transform: scale(1.2);
+}
