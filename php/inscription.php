@@ -93,6 +93,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   <title>Inscription – CY City Adventure</title>
   <link rel="stylesheet" href="inscription.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+   <link id="theme-css" rel="stylesheet" href="clair.css">
 </head>
 <body>
   <!-- Navigation -->
