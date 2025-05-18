@@ -22,7 +22,7 @@ if (isset($_POST['options']) && is_array($_POST['options'])) {
 }
 
 // Chargement des voyages depuis JSON
-$chemin = __DIR__ . '/../info/voyages.json';
+$chemin = __DIR__ . '/voyages.json';
 $data = @file_get_contents($chemin);
 $voyages = $data !== false ? json_decode($data, true) : [];
 if (!is_array($voyages)) {
