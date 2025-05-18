@@ -1,0 +1,16 @@
+:root {
+  --bg: #121212;
+  --text: #f0f0f0;
+  --accent: #ff5a5f;
+  --nav-bg: rgba(18,18,18,0.9);
+  --field-bg: #1e1e1e;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+}
+
+nav.interface {
+  background: var(--nav-bg);
+}
