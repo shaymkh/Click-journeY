@@ -153,7 +153,7 @@ foreach ($mesPaiements as $p) {
         <a href="profil.php?edit=password" class="edit-btn" title="Modifier votre mot de passe">✏️</a>
       <?php endif; ?>
     </div>
-    
+     </div>
   <div class="history-section">
     <h2>Mes voyages réservés</h2>
     <?php if (empty($voyagesPayes)): ?>
