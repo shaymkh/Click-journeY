@@ -1,10 +1,6 @@
 <?php
 session_start();
-// Redirection si utilisateur déjà connecté
-if (isset($_SESSION['login'])) {
-    header('Location: accueil.html');
-    exit;
-}
+
 // Chemin vers le fichier JSON des utilisateurs
 $cheminUsers = __DIR__ . '/../info/utilisateurs.json';
 
@@ -35,16 +31,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         foreach ($utilisateurs as &$u) {
             if (strcasecmp($u['email'], $email) === 0) {
                 $trouve = true;
-                if (( (strpos($u['mot_de_passe'], '$2y$') === 0 && password_verify($mdp, $u['mot_de_passe'])) || $mdp === $u['mot_de_passe'] )) {
+                $isHash = strpos($u['mot_de_passe'], '$2y$') === 0;
+                $validPassword = $isHash ? password_verify($mdp, $u['mot_de_passe']) : ($mdp === $u['mot_de_passe']);
+                if ($validPassword) {
                     // Mettre à jour dernière connexion
                     $u['derniere_connexion'] = date('Y-m-d H:i:s');
                     file_put_contents(
                         $cheminUsers,
                         json_encode($utilisateurs, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE)
                     );
-                    // Connexion réussie
-                    $_SESSION['login'] = $u['login'];
-                    $_SESSION['role']  = $u['role'];
+                    // Connexion réussie : stocker utilisateur en session
+                    $_SESSION['user'] = $u;
                     header('Location: profil.php');
                     exit;
                 } else {
@@ -60,7 +57,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 ?>
 
-<!-- login.php (remplace login.html) -->
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -86,7 +82,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <button id="theme" class="theme">☀️</button>
   </nav>
 
-  <!-- Formulaire de connexion -->
   <section class="login-section">
     <form method="post" class="login-form" novalidate>
       <h2>Se connecter</h2>
@@ -99,14 +94,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </ul>
       </div>
       <?php endif; ?>
+
       <div class="form-group">
         <label for="email">Adresse e-mail</label>
         <input type="email" id="email" name="email" required placeholder="votre@exemple.com" value="<?= htmlspecialchars($_POST['email'] ?? '') ?>">
       </div>
+
       <div class="form-group">
         <label for="password">Mot de passe</label>
         <input type="password" id="password" name="password" required placeholder="••••••••">
       </div>
+
       <button type="submit" class="btn">Connexion</button>
       <p class="alt-link">
         Pas encore inscrit ? <a href="inscription.php">Créer un compte</a>
