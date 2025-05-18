@@ -9,7 +9,7 @@ if (empty($_SESSION['user'])) {
 
 // Chargement du voyage par ID en GET
 $id = intval($_GET['id'] ?? 0);
-$chemin = __DIR__ . '/../info/voyages.json';
+$chemin = __DIR__ . '/voyages.json';
 $data = @file_get_contents($chemin);
 $voyages = $data ? json_decode($data, true) : [];
 $details = null;
