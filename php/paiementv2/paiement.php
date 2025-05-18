@@ -34,6 +34,7 @@ if (!$details) {
   <link rel="stylesheet" href="recap_voyage.css">
  <link rel="stylesheet" href="paiement.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+     <link id="theme-css" rel="stylesheet" href="clair.css">
 </head>
 <body>
  <!-- Navigation -->
