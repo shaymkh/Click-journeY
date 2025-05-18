@@ -173,7 +173,9 @@ foreach ($mesPaiements as $p) {
     <?php endif; ?>
   </div>
 </section>
+    
 <script src="homepage.js"></script>
+    <script src="profil.js" defer></script>
 </body>
 </html>
 
