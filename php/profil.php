@@ -2,7 +2,7 @@
 session_start();
 
 // Chemin vers JSON
-$cheminUsers = __DIR__ . '/../info/utilisateurs.json';
+$cheminUsers = __DIR__ . '/utilisateurs.json';
 $utilisateurs = json_decode(@file_get_contents($cheminUsers), true) ?: [];
 
 // Redirection si non connecté
