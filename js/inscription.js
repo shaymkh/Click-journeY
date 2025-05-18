@@ -1,77 +1,64 @@
+// form-validation.js
 document.addEventListener("DOMContentLoaded", function () {
   const formulaire = document.querySelector("form");
 
   formulaire.addEventListener("submit", function (evenement) {
-    evenement.preventDefault(); // Empêche l'envoi du formulaire par défaut
+    evenement.preventDefault();
+    document.querySelectorAll(".message-erreur").forEach(e => e.remove());
+    let valide = true;
 
-    // Supprimer les anciens messages d'erreur
-    document.querySelectorAll(".message-erreur").forEach(element => element.remove());
-
-    let formulaireValide = true;
-
-    // Expressions régulières pour mail et tel
-    const expressionEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-    // Fonction pour afficher un message d'erreur
-    function afficherMessageErreur(champ, message) {
-      const messageErreur = document.createElement("div");
-      messageErreur.className = "message-erreur";
-      messageErreur.style.color = "red";
-      messageErreur.style.fontSize = "0.9em";
-      messageErreur.textContent = message;
-      champ.parentElement.appendChild(messageErreur);
-      formulaireValide = false;
-    }
-
-    // Récupération des champs
     const champs = {
-      pseudo: document.getElementById("pseudo"),
-      courriel: document.getElementById("email"),
-      motDePasse: document.getElementById("password")
+      username: document.getElementById("username"),
+      email:    document.getElementById("email"),
+      password: document.getElementById("password"),
+      confirm:  document.getElementById("confirm-password")
     };
 
-    // Vérification que tous les champs sont remplis
-    for (let champ in champs) {
-      if (champs[champ].value.trim() === "") {
-        afficherMessageErreur(champs[champ], "Ce champ est obligatoire.");
+    const reEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    function showError(champ, msg) {
+      const div = document.createElement("div");
+      div.className = "message-erreur";
+      div.style.color = "red";
+      div.textContent = msg;
+      champ.parentElement.appendChild(div);
+      valide = false;
+    }
+
+    // Champs obligatoires
+    for (let key of ["username","email","password","confirm"]) {
+      if (champs[key].value.trim()==="") {
+        showError(champs[key], "Ce champ est obligatoire.");
       }
     }
 
-    // Validation du courriel
-    if (!expressionEmail.test(champs.courriel.value.trim())) {
-      afficherMessageErreur(champs.courriel, "Adresse email invalide.");
+    // Email
+    if (champs.email.value.trim() !== "" && !reEmail.test(champs.email.value.trim())) {
+      showError(champs.email, "Adresse email invalide.");
     }
 
- 
-
-    // Validation du mot de passe
-    if (champs.motDePasse.value.length < 2) {
-      afficherMessageErreur(champs.motDePasse, "Le mot de passe doit contenir au moins 2 caractères.");
+    // Mot de passe min 2
+    if (champs.password.value.length < 2) {
+      showError(champs.password, "Le mot de passe doit contenir au moins 2 caractères.");
+    }
+    // Confirmation
+    if (champs.password.value !== champs.confirm.value) {
+      showError(champs.confirm, "Les mots de passe ne correspondent pas.");
     }
 
-    // Si tout est correct, soumettre le formulaire
-    if (formulaireValide) {
-      formulaire.submit();
-    }
+    if (valide) formulaire.submit();
   });
-});
-// partie qui s'occupe de la visibilité du mdp
-document.addEventListener("DOMContentLoaded", function () {
-  const champMotDePasse = document.getElementById("password");
-  const iconeOeil = document.getElementById("togglePassword");
 
-  // Lorsque l'on clique sur l'icône, on bascule le mot de passe entre visible et masqué
-  iconeOeil.addEventListener("click", function () {
-    // Récupérer le type actuel du champ de mot de passe
-    const typeActuel = champMotDePasse.getAttribute("type");
-    
-    // Si le type est "password", on le change en "text", sinon on le remet en "password"
-    const nouveauType = typeActuel === "password" ? "text" : "password";
-    champMotDePasse.setAttribute("type", nouveauType);
-
-    // Bascule de l'icône entre "œil ouvert" et "œil barré"
-    iconeOeil.classList.toggle("fa-eye-slash");  // Oeil barré
-    iconeOeil.classList.toggle("fa-eye");        // Oeil ouvert
-  });
+  // toggle visibilité mot de passe
+  const mdp = document.getElementById("password");
+  const toggle = document.getElementById("togglePassword");
+  if (mdp && toggle) {
+    toggle.addEventListener("click", () => {
+      const type = mdp.getAttribute("type") === "password" ? "text" : "password";
+      mdp.setAttribute("type", type);
+      toggle.classList.toggle("fa-eye-slash");
+      toggle.classList.toggle("fa-eye");
+    });
+  }
 });
 
