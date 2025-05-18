@@ -11,7 +11,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Expressions régulières pour mail et tel
     const expressionEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    const expressionTelephone = /^[0-9]{10}$/;
 
     // Fonction pour afficher un message d'erreur
     function afficherMessageErreur(champ, message) {
@@ -26,12 +25,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Récupération des champs
     const champs = {
-      telephone: document.getElementById("phone"),
+      pseudo: document.getElementById("pseudo"),
       courriel: document.getElementById("email"),
-      nom: document.getElementById("lastName"),
-      prenom: document.getElementById("firstName"),
-      dateNaissance: document.getElementById("dob"),
-      adresse: document.getElementById("address"),
       motDePasse: document.getElementById("password")
     };
 
@@ -47,14 +42,11 @@ document.addEventListener("DOMContentLoaded", function () {
       afficherMessageErreur(champs.courriel, "Adresse email invalide.");
     }
 
-    // Validation du téléphone
-    if (!expressionTelephone.test(champs.telephone.value.trim())) {
-      afficherMessageErreur(champs.telephone, "Le numéro doit contenir exactement 10 chiffres.");
-    }
+ 
 
     // Validation du mot de passe
-    if (champs.motDePasse.value.length < 8) {
-      afficherMessageErreur(champs.motDePasse, "Le mot de passe doit contenir au moins 8 caractères.");
+    if (champs.motDePasse.value.length < 2) {
+      afficherMessageErreur(champs.motDePasse, "Le mot de passe doit contenir au moins 2 caractères.");
     }
 
     // Si tout est correct, soumettre le formulaire
