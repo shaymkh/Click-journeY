@@ -32,16 +32,20 @@ if (!$details) {
   <title><?= htmlspecialchars($details['titre']) ?> – CY City Adventure</title>
   <link rel="stylesheet" href="detail.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-   <link id="theme-css" rel="stylesheet" href="clair.css">
 </head>
-<body>
+<body data-prix-base="<?= $details['prix_base'] ?>">
 
-    
   <section class="detail-section">
     <h1><?= htmlspecialchars($details['titre']) ?></h1>
     <p>Du <?= htmlspecialchars($details['date_debut']) ?> au <?= htmlspecialchars($details['date_fin']) ?></p>
     <form method="post" action="recap_voyage.php">
       <input type="hidden" name="id" value="<?= intval($details['id']) ?>">
+
+      <div class="field-group">
+        <label for="nb-personnes">Nombre de personnes</label>
+        <input type="number" id="nb-personnes" name="nb_personnes" value="1" min="1">
+      </div>
+
       <?php foreach ($details['etapes'] as $index => $etape): ?>
         <fieldset>
           <legend><?= htmlspecialchars($etape['titre']) ?></legend>
@@ -55,10 +59,13 @@ if (!$details) {
           <?php endforeach; ?>
         </fieldset>
       <?php endforeach; ?>
+
       <button type="submit" class="btn">Voir récapitulatif</button>
     </form>
+    <p class="prix-estime">Prix estimé : <span id="prix-estime">...</span> €</p>
   </section>
 
+  <script src="detail_voyage.js"></script>
   <script src="homepage.js"></script>
 </body>
 </html>
