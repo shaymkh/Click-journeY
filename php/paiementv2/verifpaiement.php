@@ -18,7 +18,7 @@ $valid_cvv    = '555';
 $valid = ($card_number === $valid_number && $cvv === $valid_cvv);
 
 // Fichier de traçabilité
-define('PAYMENTS_FILE', __DIR__ . '/../info/payments.json');
+define('PAYMENTS_FILE', __DIR__ . '/payments.json');
 $payments = [];
 if (file_exists(PAYMENTS_FILE)) {
     $payments = json_decode(file_get_contents(PAYMENTS_FILE), true) ?: [];
