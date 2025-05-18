@@ -1,47 +1,62 @@
 document.addEventListener('DOMContentLoaded', () => {
-    let modifValidee = false;
+  const form = document.getElementById('form-profil');
+  const msg = document.getElementById('profil-msg');
 
-    document.querySelectorAll('.champ-editable').forEach(div => {
-        const input = div.querySelector('input');
-        const editBtn = div.querySelector('.edit-btn');
-        const validerBtn = div.querySelector('.valider-btn');
-        const annulerBtn = div.querySelector('.annuler-btn');
+  const inputFields = form.querySelectorAll('input');
+  const editBtn = document.getElementById('edit-btn');
+  const saveBtn = document.getElementById('save-btn');
+  const cancelBtn = document.getElementById('cancel-btn');
 
-        let ancienneValeur = input.value;
+  const originalValues = {};
+  inputFields.forEach(input => {
+    originalValues[input.name] = input.value;
+    input.disabled = true;
+  });
 
-        editBtn.addEventListener('click', () => {
-            input.disabled = false;
-            ancienneValeur = input.value;
-            validerBtn.style.display = 'inline-block';
-            annulerBtn.style.display = 'inline-block';
-            editBtn.style.display = 'none';
-        });
+  editBtn.addEventListener('click', () => {
+    inputFields.forEach(i => i.disabled = false);
+    editBtn.style.display = 'none';
+    saveBtn.style.display = 'inline-block';
+    cancelBtn.style.display = 'inline-block';
+  });
 
-        validerBtn.addEventListener('click', () => {
-            input.disabled = true;
-            validerBtn.style.display = 'none';
-            annulerBtn.style.display = 'none';
-            editBtn.style.display = 'inline-block';
-            modifValidee = true;
-            document.getElementById('form-actions').style.display = 'block';
-        });
-
-        annulerBtn.addEventListener('click', () => {
-            input.value = ancienneValeur;
-            input.disabled = true;
-            validerBtn.style.display = 'none';
-            annulerBtn.style.display = 'none';
-            editBtn.style.display = 'inline-block';
-        });
+  cancelBtn.addEventListener('click', () => {
+    inputFields.forEach(i => {
+      i.value = originalValues[i.name];
+      i.disabled = true;
     });
-});
-document.addEventListener('DOMContentLoaded', () => {
-    const form = document.getElementById('form-profil');
-    form.addEventListener('submit', (e) => {
-        if (!modifValidee) {
-            e.preventDefault();
-            alert("Vous devez valider au moins une modification avant d'envoyer le formulaire.");
-        }
+    msg.textContent = '';
+    editBtn.style.display = 'inline-block';
+    saveBtn.style.display = 'none';
+    cancelBtn.style.display = 'none';
+  });
+
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    const data = new FormData(form);
+    fetch('update_profil.php', {
+      method: 'POST',
+      body: data
+    })
+    .then(res => res.json())
+    .then(response => {
+      msg.textContent = response.message;
+      msg.style.color = response.success ? 'green' : 'red';
+
+      if (response.success) {
+        inputFields.forEach(i => {
+          originalValues[i.name] = i.value;
+          i.disabled = true;
+        });
+        editBtn.style.display = 'inline-block';
+        saveBtn.style.display = 'none';
+        cancelBtn.style.display = 'none';
+      }
+    })
+    .catch(() => {
+      msg.textContent = 'Erreur lors de la requête AJAX';
+      msg.style.color = 'red';
     });
+  });
 });
 
