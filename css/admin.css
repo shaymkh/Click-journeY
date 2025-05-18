@@ -141,3 +141,7 @@ html, body {
   color: crimson;
   transform: scale(1.2);
 }
+.action-btn.loading {
+  opacity: 0.6;
+  cursor: wait;
+}
