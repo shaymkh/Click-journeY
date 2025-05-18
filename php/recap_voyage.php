@@ -2,6 +2,10 @@
 session_start();
 
 
+// Lire le mode « lecture seule »
+$readonly = isset($_GET['readonly']);
+// … ton code existant pour charger le voyage …
+
 
 // Récupération de l'ID du voyage (GET ou POST)
 $id = 0;
@@ -115,5 +119,6 @@ $nbEtapes = count($details['etapes']);
   <script src="homepage.js"></script>
 </body>
 </html>
+
 
 
