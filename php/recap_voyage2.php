@@ -70,6 +70,7 @@ $nbEtapes = count($details['etapes']);
   <link rel="stylesheet" href="destinations.css">
   <link rel="stylesheet" href="detail.css">
   <link rel="stylesheet" href="recap_voyage.css">
+ <link id="theme-css" rel="stylesheet" href="clair.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body<?= $readonly ? ' class="readonly"' : '' ?>>
