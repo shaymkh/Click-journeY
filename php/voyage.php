@@ -89,7 +89,7 @@ document.addEventListener('DOMContentLoaded', () => {
     9: "https://cf.bstatic.com/xdata/images/hotel/max1024x768/474961167.jpg?k=10ac1171669e4f6fe5f39ff38152c8ca20eff9f94ea355348fafa06a1a327a71&o=&hp=1",
     10: "https://cdn.generationvoyage.fr/2023/12/Velos-a-Amsterdam.jpeg",
     11: "https://i0.wp.com/lucile-k.com/wp-content/uploads/2019/04/KendraBen-amsterdam-engagement-session-6.jpg",
-    12: "https://www.lademeureduparc.fr/wp-content/uploads/2024/04/Decouvrir-les-charmes-des-Pays-Bas-un-voyage-inoubliable-a-travers-ce-pays-aux-moulins-emblematiques-aux-magnifiques-champs-de-tulipes-et-aux-charmants-canaux-2.png",
+    12: "https://media.istockphoto.com/id/1317323730/fr/photo/paysage-rural-n%C3%A9erlandais-avec-des-tulipes-et-un-canal-au-printemps.jpg",
     13: "https://images3.bovpg.net/r/back/fr/sale/5718a686e852ao.jpg",
     14: "https://discover.ulysse.com/wp-content/uploads/2023/12/Desert-de-Dubai-Emirats-arabes-unis-.jpg",
     15: "https://media-cdn.tripadvisor.com/media/attractions-splice-spp-674x446/11/fa/a4/5a.jpg"
