@@ -6,7 +6,7 @@ session_start();
 $id = intval($_GET['id'] ?? 0);
 
 // Chargement du voyage depuis JSON
-$chemin = __DIR__ . '/../info/voyages.json';
+$chemin = __DIR__ . '/voyages.json';
 $data = @file_get_contents($chemin);
 $voyages = $data !== false ? json_decode($data, true) : [];
 $details = null;
