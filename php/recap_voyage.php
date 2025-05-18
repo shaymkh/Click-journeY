@@ -1,9 +1,21 @@
 <?php
 session_start();
 
-// Récupération de l'ID et des options personnalisées
-$id = intval($_POST['id'] ?? 0);
-$options = $_POST['options'] ?? [];
+
+
+// Récupération de l'ID du voyage (GET ou POST)
+$id = 0;
+if (isset($_GET['id'])) {
+    $id = intval($_GET['id']);
+} elseif (isset($_POST['id'])) {
+    $id = intval($_POST['id']);
+}
+
+// Récupération des options si soumises
+$options = [];
+if (isset($_POST['options']) && is_array($_POST['options'])) {
+    $options = $_POST['options'];
+}
 
 // Chargement des voyages depuis JSON
 $chemin = __DIR__ . '/../info/voyages.json';
@@ -16,7 +28,7 @@ if (!is_array($voyages)) {
 // Recherche du voyage sélectionné
 $details = null;
 foreach ($voyages as $v) {
-    if ($v['id'] === $id) {
+    if (isset($v['id']) && intval($v['id']) === $id) {
         $details = $v;
         break;
     }
@@ -39,8 +51,7 @@ foreach ($details['etapes'] as $i => $etape) {
 // Calcul de la durée en jours
 $dateDebut = new DateTime($details['date_debut']);
 $dateFin = new DateTime($details['date_fin']);
-$interval = $dateDebut->diff($dateFin);
-$durationDays = $interval->days;
+$durationDays = $dateDebut->diff($dateFin)->days;
 
 // Nombre d'étapes
 $nbEtapes = count($details['etapes']);
@@ -57,7 +68,8 @@ $nbEtapes = count($details['etapes']);
   <link rel="stylesheet" href="recap_voyage.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
-<body>
+<body<?= $readonly ? ' class="readonly"' : '' ?>>
+
   <!-- Navigation -->
   <nav class="interface">
     <div class="logo">CY City Adventure</div>
@@ -96,7 +108,7 @@ $nbEtapes = count($details['etapes']);
 
     <div class="recap-actions">
       <a href="detail_voyage.php?id=<?= $id ?>" class="btn">Modifier</a>
-      <a href="paiement.php" class="btn">Confirmer et payer</a>
+      <a href="paiement.php?id=<?= $id ?>" class="btn">Confirmer et payer</a>
     </div>
   </section>
 
