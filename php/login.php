@@ -3,7 +3,7 @@
 session_start();
 
 // Chemin vers le fichier JSON des utilisateurs
-$cheminUsers = __DIR__ . '/utilisateurs.json';
+$cheminUsers = __DIR__ . '/../info/utilisateurs.json';
 
 // Charger les utilisateurs
 $jsonData = @file_get_contents($cheminUsers);
@@ -70,7 +70,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   <title>Connexion – CY City Adventure</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="login.css">
-   <link id="theme-css" rel="stylesheet" href="clair.css">
+  <link id="theme-css" rel="stylesheet" href="clair.css">
 </head>
 <body>
 
@@ -115,16 +115,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         >
       </div>
 
-      <div class="form-group">
-        <label for="password">Mot de passe</label>
-        <input
-          type="password"
-          id="password"
-          name="password"
-          required
-          placeholder="••••••••"
-        >
-      </div>
+     <div class="form-group password-group">
+  <label for="password">Mot de passe</label>
+  <div class="password-wrapper">
+    <input 
+      type="password" 
+      id="password" 
+      name="password" 
+      required 
+      placeholder="••••••••"
+    >
+    <!-- Icône FontAwesome -->
+    <i id="togglePassword" class="fa fa-eye" style="cursor:pointer; margin-left:-30px;"></i>
+  </div>
+</div>
 
       <button type="submit" class="btn">Connexion</button>
       <p class="alt-link">
