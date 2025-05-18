@@ -13,6 +13,7 @@ if (!is_array($voyages)) $voyages = [];
   <title>Recherche de voyages – CY City Adventure</title>
   <link rel="stylesheet" href="destinations.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+   <link id="theme-css" rel="stylesheet" href="clair.css">
 </head>
 <body>
 <nav class="interface">
