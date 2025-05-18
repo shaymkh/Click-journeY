@@ -32,6 +32,7 @@ if (!$details) {
   <title><?= htmlspecialchars($details['titre']) ?> – CY City Adventure</title>
   <link rel="stylesheet" href="detail.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+   <link id="theme-css" rel="stylesheet" href="clair.css">
 </head>
 <body>
 
