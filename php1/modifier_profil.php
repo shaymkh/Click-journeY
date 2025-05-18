@@ -17,7 +17,7 @@ if (isset($data) && !empty($data)) {
     $current_user = $data[0]; // À remplacer par la logique réelle de session si nécessaire
 }
 
-// Variable pour le message d'erreur
+// Variable pour le message d'erreur    
 $error_message = "";
 
 // Vérification du mot de passe avant la modification
