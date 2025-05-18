@@ -8,7 +8,7 @@ $montant = '18000.99';        // Montant de la transaction
 $vendeur = 'MI-1_G';          // Code vendeur
 $retour = 'http://localhost/retour_paiement.php?session=s';  // URL de retour
 
-// Récupérer la clé API pour le vendeur
+// Récupérer la clé API pour le vendeur   
 $api_key = getAPIKey($vendeur);
 
 // Calculer la valeur de contrôle
