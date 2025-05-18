@@ -2,7 +2,7 @@
 session_start();
 
 // Chemin absolu vers le fichier utilisateurs.json
-$cheminUsers = __DIR__ . '/utilisateurs.json';
+$cheminUsers = __DIR__ . '/../info/utilisateurs.json';
 
 // Crée le fichier vide si nécessaire
 if (!file_exists($cheminUsers)) {
@@ -78,7 +78,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         // Connexion automatique
         $_SESSION['login'] = $pseudo;
-        header('Location: connexion.php');
+        header('Location: login.php');
         exit;
     }
 }
@@ -93,7 +93,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   <title>Inscription – CY City Adventure</title>
   <link rel="stylesheet" href="inscription.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-   <link id="theme-css" rel="stylesheet" href="clair.css">
+  <link id="theme-css" rel="stylesheet" href="clair.css">
 </head>
 <body>
   <!-- Navigation -->
@@ -133,10 +133,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <label for="email">Adresse e-mail</label>
         <input type="email" id="email" name="email" required placeholder="votre@exemple.com" value="<?= htmlspecialchars($email) ?>">
       </div>
-      <div class="form-group">
+      <div class="form-group password-group">
         <label for="password">Mot de passe</label>
+<div class="password-wrapper">
         <input type="password" id="password" name="password" required placeholder="••••••••">
+<i id="togglePassword" class="fa fa-eye"></i>
       </div>
+</div>
       <div class="form-group">
         <label for="confirm-password">Confirmez le mot de passe</label>
         <input type="password" id="confirm-password" name="confirm-password" required placeholder="••••••••">
@@ -148,7 +151,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </form>
   </section>
 
-  <!-- bascule thème -->
+  <script src="inscription.js" defer></script>
   <script src="homepage.js"></script>
 </body>
 </html>
