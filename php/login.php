@@ -1,10 +1,11 @@
 <?php
+// login.php
 session_start();
 
 // Chemin vers le fichier JSON des utilisateurs
 $cheminUsers = __DIR__ . '/../info/utilisateurs.json';
 
-// Charger utilisateurs
+// Charger les utilisateurs
 $jsonData = @file_get_contents($cheminUsers);
 $utilisateurs = $jsonData !== false ? json_decode($jsonData, true) : [];
 if (!is_array($utilisateurs)) {
@@ -26,22 +27,27 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
     if (empty($erreurs)) {
-        // Recherche utilisateur
         $trouve = false;
         foreach ($utilisateurs as &$u) {
             if (strcasecmp($u['email'], $email) === 0) {
                 $trouve = true;
+                // Vérifier mot de passe hashé ou clair
                 $isHash = strpos($u['mot_de_passe'], '$2y$') === 0;
-                $validPassword = $isHash ? password_verify($mdp, $u['mot_de_passe']) : ($mdp === $u['mot_de_passe']);
+                $validPassword = $isHash
+                    ? password_verify($mdp, $u['mot_de_passe'])
+                    : ($mdp === $u['mot_de_passe']);
+
                 if ($validPassword) {
-                    // Mettre à jour dernière connexion
+                    // Mettre à jour la dernière connexion
                     $u['derniere_connexion'] = date('Y-m-d H:i:s');
                     file_put_contents(
                         $cheminUsers,
                         json_encode($utilisateurs, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE)
                     );
-                    // Connexion réussie : stocker utilisateur en session
-                    $_SESSION['user'] = $u;
+                    // Stocker l'utilisateur et son rôle en session
+                    $_SESSION['user']  = $u;
+                    $_SESSION['login'] = $u['login'];
+                    $_SESSION['role']  = $u['role'];
                     header('Location: profil.php');
                     exit;
                 } else {
@@ -56,7 +62,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 ?>
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -82,14 +87,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <button id="theme" class="theme">☀️</button>
   </nav>
 
+  <!-- Formulaire de connexion -->
   <section class="login-section">
     <form method="post" class="login-form" novalidate>
       <h2>Se connecter</h2>
+
       <?php if (!empty($erreurs)): ?>
       <div class="erreurs">
         <ul>
           <?php foreach ($erreurs as $err): ?>
-          <li><?= htmlspecialchars($err) ?></li>
+          <li><?= htmlspecialchars($err, ENT_QUOTES) ?></li>
           <?php endforeach; ?>
         </ul>
       </div>
@@ -97,12 +104,25 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
       <div class="form-group">
         <label for="email">Adresse e-mail</label>
-        <input type="email" id="email" name="email" required placeholder="votre@exemple.com" value="<?= htmlspecialchars($_POST['email'] ?? '') ?>">
+        <input
+          type="email"
+          id="email"
+          name="email"
+          required
+          placeholder="votre@exemple.com"
+          value="<?= htmlspecialchars($_POST['email'] ?? '', ENT_QUOTES) ?>"
+        >
       </div>
 
       <div class="form-group">
         <label for="password">Mot de passe</label>
-        <input type="password" id="password" name="password" required placeholder="••••••••">
+        <input
+          type="password"
+          id="password"
+          name="password"
+          required
+          placeholder="••••••••"
+        >
       </div>
 
       <button type="submit" class="btn">Connexion</button>
@@ -112,7 +132,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </form>
   </section>
 
-<script src="homepage.js"></script>
+  <script src="homepage.js"></script>
 </body>
 </html>
 

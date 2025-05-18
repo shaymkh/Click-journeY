@@ -1,11 +1,11 @@
 <?php
 session_start();
-
-// Restriction d'accès: seuls les admins
-if (!isset($_SESSION['login']) || $_SESSION['role'] !== 'admin') {
+// seuls les admins
+if (empty($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
     header('Location: login.php');
     exit;
 }
+
 // Chemin vers le fichier JSON des utilisateurs
 $cheminUsers = __DIR__ . '/../info/utilisateurs.json';
 // Lecture du JSON
