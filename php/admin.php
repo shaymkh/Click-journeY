@@ -104,6 +104,7 @@ $liste = array_slice($utilisateurs, $offset, $parPage);
 
   <!-- Bascule thème -->
   <script src="homepage.js"></script>
+    <script src="admin.js" defer></script>
 </body>
 </html>
 
