@@ -1,54 +1,44 @@
-// Injection du CSS
-const style = document.createElement('style');
-style.textContent = `
-  body { font-family: Arial; padding: 20px; background: #f5f5f5; }
-  .navbar ul { list-style:none; display:flex; gap:10px; padding:0; }
-  .navbar a { text-decoration:none; color:#333; }
-  .admin-container {
-    max-width: 800px; margin: 20px auto; background: #fff;
-    padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);
-  }
-  table { width:100%; border-collapse: collapse; margin-bottom:20px; }
-  th, td { padding:10px; border:1px solid #ddd; text-align:center; }
-  .switch { position:relative; display:inline-block; width:50px; height:24px; }
-  .switch input { opacity:0; width:0; height:0; }
-  .slider {
-    position:absolute; cursor:pointer; top:0; left:0; right:0; bottom:0;
-    background-color:#ccc; transition:.4s; border-radius:24px;
-  }
-  .slider:before {
-    position:absolute; content:""; height:18px; width:18px;
-    left:3px; bottom:3px; background:white; transition:.4s; border-radius:50%;
-  }
-  input:checked + .slider { background-color:#5d74b8; }
-  input:checked + .slider:before { transform: translateX(26px); }
-  input[disabled] + .slider { background:#eee; cursor:not-allowed; }
-  .loading { margin-left:8px; font-weight:bold; }
-  .pagination a { margin:0 5px; text-decoration:none; color:#333; }
-  .pagination a.current { font-weight:bold; }
-`;
-document.head.appendChild(style);
-
+// admin.js
 document.addEventListener('DOMContentLoaded', () => {
-  document.querySelectorAll('.toggle-btn').forEach(btn => {
-    btn.addEventListener('change', () => {
-      btn.disabled = true;
-      const cell = btn.closest('td');
-      const loader = document.createElement('span');
-      loader.className = 'loading';
-      loader.textContent = '…';
-      cell.appendChild(loader);
+  // Sélectionne tous les formulaires d'action dans le tableau
+  document.querySelectorAll('.users-table form').forEach(form => {
+    form.addEventListener('submit', evt => {
+      evt.preventDefault();
+      const btn    = form.querySelector('button[type="submit"]');
+      const action = btn.value; // "toggle_vip" ou "toggle_ban"
+      const row    = form.closest('tr');
 
+      // Désactive le bouton et ajoute un style de chargement
+      btn.disabled = true;
+      btn.classList.add('loading');
+
+      // Temporisation pour simuler l'attente
       setTimeout(() => {
-        loader.remove();
+        // On récupère le <span class="status"> de la colonne correspondante
+        let statusSpan;
+        if (action === 'toggle_vip') {
+          statusSpan = row.querySelector('td:nth-child(3) .status');
+        } else { // toggle_ban
+          statusSpan = row.querySelector('td:nth-child(4) .status');
+        }
+
+        // On inverse la classe et le texte
+        if (statusSpan) {
+          const estOui = statusSpan.classList.contains('yes');
+          statusSpan.classList.toggle('yes', !estOui);
+          statusSpan.classList.toggle('no',  estOui);
+          statusSpan.textContent = estOui ? 'Non' : 'Oui';
+        }
+
+        // Réactive le bouton et enlève le style de chargement
         btn.disabled = false;
-        
-        // la phase 4
-      }, 2000);
+        btn.classList.remove('loading');
+
+        // Si vous aviez une action backend fonctionnelle,
+        // c'est ici que vous pourriez appeler form.submit()
+        // pour envoyer la vraie requête après le délai.
+
+      }, 2000); // 2 secondes de simulation
     });
   });
 });
-
-
-
-
