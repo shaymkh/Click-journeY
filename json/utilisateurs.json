@@ -1,46 +1,65 @@
 [
-  {
-    "login": "admin1",
-    "mot_de_passe": "34FHTyyy",  
-    "role": "admin",
-    "email": "admin1@exemple.com",
-    "date_inscription": "2025-05-01",
-    "derniere_connexion": null,
-    "voyages_achetes": []
-  },
-  {
-    "login": "admin2",
-    "mot_de_passe": "45HYPROyy",  
-    "role": "admin",
-    "email": "admin2@exemple.com",
-    "date_inscription": "2025-05-05",
-    "derniere_connexion": null,
-    "voyages_achetes": []
-  },
-  {
-    "login": "jeandupont",
-    "mot_de_passe": "1234yyyy"
-    "email": "jean.dupont@exemple.com",
-    "date_inscription": "2025-05-10",
-    "derniere_connexion": null,
-    "voyages_achetes": []
-  },
-  {
-    "login": "mariedurand",
-    "mot_de_passe": "KIJG67yyy",  
-    "role": "user",
-    "email": "marie.durand@exemple.com",
-    "date_inscription": "2025-05-12",
-    "derniere_connexion": null,
-    "voyages_achetes": []
-  },
-  {
-    "login": "ahmedtiger",
-    "mot_de_passe": "rt6hyyyy",  
-    "role": "user",
-    "email": "ahmed.tiger@exemple.com",
-    "date_inscription": "2025-05-15",
-    "derniere_connexion": null,
-    "voyages_achetes": []
-  }
+    {
+        "login": "admin1",
+        "mot_de_passe": "34FHTyyy",
+        "role": "admin",
+        "email": "admin1@exemple.com",
+        "date_inscription": "2025-05-01",
+        "derniere_connexion": null,
+        "voyages_achetes": []
+    },
+    {
+        "login": "admin2",
+        "mot_de_passe": "45HYPROyy",
+        "role": "admin",
+        "email": "admin2@exemple.com",
+        "date_inscription": "2025-05-05",
+        "derniere_connexion": null,
+        "voyages_achetes": []
+    },
+    {
+        "login": "oui",
+        "mot_de_passe": "1234",
+        "role": "user",
+        "email": "i@exemple.com",
+        "date_inscription": "2025-05-10",
+        "derniere_connexion": "2025-05-18 13:03:00",
+        "voyages_achetes": []
+    },
+    {
+        "login": "mariedurand",
+        "mot_de_passe": "KIJG67yyy",
+        "role": "user",
+        "email": "marie.durand@exemple.com",
+        "date_inscription": "2025-05-12",
+        "derniere_connexion": null,
+        "voyages_achetes": []
+    },
+    {
+        "login": "ahmedtiger",
+        "mot_de_passe": "rt6hyyyy",
+        "role": "user",
+        "email": "ahmed.tiger@exemple.com",
+        "date_inscription": "2025-05-15",
+        "derniere_connexion": null,
+        "voyages_achetes": []
+    },
+    {
+        "login": "wsh",
+        "mot_de_passe": "$2y$10$Cgiw11\/M4G1Vdk793e2Rou4rihJIH3MCk5g21oM34zI8vG24V7xM6",
+        "role": "user",
+        "email": "wshmgl@gmail.com",
+        "date_inscription": "2025-05-17",
+        "derniere_connexion": null,
+        "voyages_achetes": []
+    },
+    {
+        "login": "pro",
+        "mot_de_passe": "$2y$10$.mmAIAGYA0ny4OwllRy60OLVdw60AyyzLPe6JyRdnAZ3bpJerY1US",
+        "role": "user",
+        "email": "pro@exemple.com",
+        "date_inscription": "2025-05-17",
+        "derniere_connexion": null,
+        "voyages_achetes": []
+    }
 ]
