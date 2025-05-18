@@ -7,7 +7,7 @@ if (empty($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
 }
 
 // Chemin vers le fichier JSON des utilisateurs
-$cheminUsers = __DIR__ . '/../info/utilisateurs.json';
+$cheminUsers = __DIR__ . '/utilisateurs.json';
 // Lecture du JSON
 $json = @file_get_contents($cheminUsers);
 $utilisateurs = $json ? json_decode($json, true) : [];
