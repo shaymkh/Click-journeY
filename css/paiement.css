@@ -1,0 +1,142 @@
+/* paiement.css */
+
+:root {
+  --bg: #ffffff;
+  --text: #333333;
+  --accent: #ff5a5f;
+  --field-bg: #f9f9f9;
+}
+[data-theme="dark"] {
+  --bg: #121212;
+  --text: #f0f0f0;
+  --accent: #ff8c42;
+  --field-bg: #1e1e1e;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Décalage pour navbar fixe */
+.paiement-section, .recap-section {
+  padding: 6rem 2rem 2rem;
+  max-width: 600px;
+  margin: auto;
+  background: var(--field-bg);
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.paiement-section h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  text-align: center;
+  color: #2C3E50;
+}
+
+.paiement-section h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  color: var(--accent);
+}
+
+.paiement-section p {
+  font-size: 0.95rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Formulaire de paiement */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  margin-bottom: 0.4rem;
+  font-weight: 500;
+}
+
+.form-group input {
+  padding: 0.6rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.form-row {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+}
+
+.form-group.small {
+  flex: 1 1 30%;
+}
+
+/* Bouton valider */
+.btn {
+  padding: 0.8rem 1.5rem;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.3s;
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+
+.btn:hover {
+  opacity: 0.9;
+}
+/* Interface (navbar) */
+.interface {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: var(--interface-bg);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  backdrop-filter: blur(10px);
+  z-index: 10;
+}
+.interface .logo {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #2C.....;
+}
+.interface-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+.interface-links a {
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 500;
+  transition: color .3s;
+}
+.interface-links a:hover {
+  color: var(--accent);
+}
+.theme {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: var(--text);
+}
