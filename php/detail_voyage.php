@@ -35,6 +35,7 @@ if (!$details) {
 </head>
 <body>
 
+    
   <section class="detail-section">
     <h1><?= htmlspecialchars($details['titre']) ?></h1>
     <p>Du <?= htmlspecialchars($details['date_debut']) ?> au <?= htmlspecialchars($details['date_fin']) ?></p>
