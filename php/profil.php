@@ -41,7 +41,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
     } elseif ($field === 'password') {
         $confirm = $_POST['confirm'] ?? '';
-        if (strlen($value) < 6) $errors[] = 'Mot de passe trop court (>=6).';
+        if (strlen($value) < 2) $errors[] = 'Mot de passe trop court (>=2).';
         if ($value !== $confirm) $errors[] = 'La confirmation ne correspond pas.';
         $value = password_hash($value, PASSWORD_DEFAULT);
     }
@@ -153,8 +153,7 @@ foreach ($mesPaiements as $p) {
         <a href="profil.php?edit=password" class="edit-btn" title="Modifier votre mot de passe">✏️</a>
       <?php endif; ?>
     </div>
-    <button class="btn logout-btn" onclick="location.href='logout.php'">Se déconnecter</button>
-  </div>
+    
   <div class="history-section">
     <h2>Mes voyages réservés</h2>
     <?php if (empty($voyagesPayes)): ?>
