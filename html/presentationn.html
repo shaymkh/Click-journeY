@@ -32,42 +32,11 @@
     <h1 class="section-title">Bienvenue chez CY City Adventure</h1>
     <p class="about-text">Notre promesse : vous faire vivre les grandes villes autrement, en explorant leurs facettes les plus authentiques.</p>
 
-    <!-- Barre de recherche rapide -->
-    <form id="quick-search-form" style="margin-top:2rem;">
-      <input list="dest-list"
-             id="quick-search-input"
-             placeholder="Recherchez une ville ou un thème…"
-             style="padding:.8rem; width:300px; border-radius:8px; border:1px solid #ccc;" required />
-      <datalist id="dest-list">
-        <option value="Londres">
-        <option value="Dubai">
-        <option value="New York">
-        <option value="Tanger">
-        <option value="Amsterdam">
-      </datalist>
-      <button type="submit" class="btn form-btn" style="margin-left:.5rem;">Rechercher</button>
-    </form>
-  </section>
+    
 
   <!-- Scripts -->
   <script src="homepage.js"></script>
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const form = document.getElementById('quick-search-form');
-      const input = document.getElementById('quick-search-input');
-      form.addEventListener('submit', e => {
-        e.preventDefault();
-        const query = input.value.trim();
-        if (!query) {
-          alert('Veuillez saisir une destination ou un thème.');
-          return;
-        }
-        // Vérification en console pour debug
-        console.log('Recherche :', query);
-        window.location.href = `recherche.html?query=${encodeURIComponent(query)}`;
-      });
-    });
-  </script>
+ 
 </body>
 </html>
 
