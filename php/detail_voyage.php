@@ -35,9 +35,6 @@ if (!$details) {
 </head>
 <body>
 
-  <!-- Navigation -->
-  <nav class="interface">…</nav>
-
   <section class="detail-section">
     <h1><?= htmlspecialchars($details['titre']) ?></h1>
     <p>Du <?= htmlspecialchars($details['date_debut']) ?> au <?= htmlspecialchars($details['date_fin']) ?></p>
