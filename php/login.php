@@ -132,7 +132,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       </p>
     </form>
   </section>
-
+<script src="connexion.js" defer></script>
   <script src="homepage.js"></script>
 </body>
 </html>
