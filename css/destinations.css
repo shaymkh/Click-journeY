@@ -206,7 +206,6 @@ html, body {
   padding: 6rem 2rem 2rem; /* 6rem de haut → nav (4rem) + gap (2rem) */
 }
 
-/* Si tu veux un écart supplémentaire avant la 1ʳᵉ section */
 .dest-preview:first-of-type {
   margin-top: 4rem;
 }
