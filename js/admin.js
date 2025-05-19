@@ -1,44 +1,38 @@
-// admin.js
 document.addEventListener('DOMContentLoaded', () => {
-  // Sélectionne tous les formulaires d'action dans le tableau
-  document.querySelectorAll('.users-table form').forEach(form => {
-    form.addEventListener('submit', evt => {
-      evt.preventDefault();
-      const btn    = form.querySelector('button[type="submit"]');
-      const action = btn.value; // "toggle_vip" ou "toggle_ban"
-      const row    = form.closest('tr');
+  document.querySelectorAll('.btn-action').forEach(button => {
+    button.addEventListener('click', async () => {
+      const login = button.dataset.login;
+      const type = button.dataset.type;
 
-      // Désactive le bouton et ajoute un style de chargement
-      btn.disabled = true;
-      btn.classList.add('loading');
+      const row = button.closest('tr');
+      const loader = row.querySelector('.loader');
+      const statusCell = row.querySelector(`td:nth-child(${type === 'vip' ? 3 : 4}) > .status`);
 
-      // Temporisation pour simuler l'attente
-      setTimeout(() => {
-        // On récupère le <span class="status"> de la colonne correspondante
-        let statusSpan;
-        if (action === 'toggle_vip') {
-          statusSpan = row.querySelector('td:nth-child(3) .status');
-        } else { // toggle_ban
-          statusSpan = row.querySelector('td:nth-child(4) .status');
+      loader.style.display = 'inline';
+      button.disabled = true;
+
+      try {
+        const res = await fetch('admin_action.php', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: `login=${encodeURIComponent(login)}&type=${encodeURIComponent(type)}`
+        });
+
+        const data = await res.json();
+        if (data.success) {
+          const newVal = data.newValue;
+          statusCell.textContent = newVal ? 'Oui' : 'Non';
+          statusCell.classList.remove('yes', 'no');
+          statusCell.classList.add(newVal ? 'yes' : 'no');
+        } else {
+          alert('Erreur : ' + (data.error || 'inconnue'));
         }
-
-        // On inverse la classe et le texte
-        if (statusSpan) {
-          const estOui = statusSpan.classList.contains('yes');
-          statusSpan.classList.toggle('yes', !estOui);
-          statusSpan.classList.toggle('no',  estOui);
-          statusSpan.textContent = estOui ? 'Non' : 'Oui';
-        }
-
-        // Réactive le bouton et enlève le style de chargement
-        btn.disabled = false;
-        btn.classList.remove('loading');
-
-        // Si vous aviez une action backend fonctionnelle,
-        // c'est ici que vous pourriez appeler form.submit()
-        // pour envoyer la vraie requête après le délai.
-
-      }, 2000); // 2 secondes de simulation
+      } catch (e) {
+        alert('Erreur de requête');
+      } finally {
+        loader.style.display = 'none';
+        button.disabled = false;
+      }
     });
   });
 });
