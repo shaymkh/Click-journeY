@@ -162,3 +162,29 @@ body.readonly .recap-actions .btn {
   display: none;
 }
 
+/* Style pour le bouton de déconnexion */
+.btn.logout-btn {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  text-align: center;
+  color: #ffffff;
+  background-color: #e53e3e;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out, transform 0.1s ease-in-out;
+}
+
+.btn.logout-btn:hover {
+  background-color: #c53030;
+  transform: translateY(-1px);
+}
+
+.btn.logout-btn:active {
+  background-color: #9b2c2c;
+  transform: translateY(0);
+}
