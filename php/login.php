@@ -3,7 +3,7 @@
 session_start();
 
 // Chemin vers le fichier JSON des utilisateurs
-$cheminUsers = __DIR__ . '/../info/utilisateurs.json';
+$cheminUsers = __DIR__ . '/utilisateurs.json';
 
 // Charger les utilisateurs
 $jsonData = @file_get_contents($cheminUsers);
