@@ -1,5 +1,6 @@
 /* detail.css */
 
+/* Variables pour thème clair/sombre */
 :root {
   --bg: #ffffff;
   --text: #333333;
@@ -15,6 +16,7 @@
   --interface-bg: rgba(18,18,18,0.9);
 }
 
+/* Reset global */
 html, body {
   margin: 0;
   padding: 0;
@@ -23,26 +25,72 @@ html, body {
   font-family: 'Poppins', sans-serif;
 }
 
+/* ========== NAVBAR ========== */
+nav.interface {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: var(--interface-bg);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+}
+nav.interface .logo {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--accent);
+}
+nav.interface .interface-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 1.5rem;
+}
+nav.interface .interface-links li {
+  margin: 0;
+}
+nav.interface .interface-links a {
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 500;
+  transition: opacity 0.2s;
+}
+nav.interface .interface-links a:hover {
+  opacity: 0.7;
+}
+nav.interface .theme {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: var(--text);
+}
 
+/* Espace sous la nav fixe */
+body {
+  padding-top: 4.5rem; /* Ajuster en fonction de la hauteur réelle de la nav */
+}
 
-/* Décalage pour navbar fixe */
+/* ========== SECTION DÉTAIL ========== */
 .detail-section {
   padding: 6rem 2rem 2rem;
   max-width: 800px;
   margin: auto;
 }
-
 .detail-section h1 {
   font-size: 2.5rem;
   margin-bottom: 0.5rem;
   color: var(--accent);
 }
-
 .detail-section p {
   font-size: 1rem;
   margin-bottom: 1.5rem;
 }
-
 .detail-section form {
   background: var(--field-bg);
   padding: 2rem;
@@ -52,25 +100,21 @@ html, body {
   flex-direction: column;
   gap: 1.5rem;
 }
-
 .detail-section fieldset {
   border: 1px solid #ccc;
   border-radius: 8px;
   padding: 1rem;
   background: var(--bg);
 }
-
 .detail-section legend {
   font-weight: 600;
   margin-bottom: 0.5rem;
 }
-
 .detail-section label {
   display: block;
   margin-bottom: 0.25rem;
   font-size: 0.95rem;
 }
-
 .detail-section select {
   width: 100%;
   padding: 0.6rem;
@@ -81,7 +125,6 @@ html, body {
   background: var(--bg);
   color: var(--text);
 }
-
 .detail-section .btn {
   align-self: flex-start;
   padding: 0.8rem 1.5rem;
@@ -94,8 +137,6 @@ html, body {
   cursor: pointer;
   transition: opacity 0.3s;
 }
-
 .detail-section .btn:hover {
   opacity: 0.9;
 }
-
