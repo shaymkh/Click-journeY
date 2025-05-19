@@ -2,7 +2,7 @@
 session_start();
 
 // Chemin absolu vers le fichier utilisateurs.json
-$cheminUsers = __DIR__ . '/../info/utilisateurs.json';
+$cheminUsers = __DIR__ . '/utilisateurs.json';
 
 // Crée le fichier vide si nécessaire
 if (!file_exists($cheminUsers)) {
