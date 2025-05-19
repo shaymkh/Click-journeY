@@ -6,10 +6,14 @@ session_start();
 $cheminUsers = __DIR__ . '/utilisateurs.json';
 
 // Charger les utilisateurs
-$jsonData = @file_get_contents($cheminUsers);
-$utilisateurs = $jsonData !== false ? json_decode($jsonData, true) : [];
-if (!is_array($utilisateurs)) {
+// Charger les utilisateurs
+if (is_readable($cheminUsers)) {
+    $jsonData = file_get_contents($cheminUsers);
+    $utilisateurs = json_decode($jsonData, true) ?: [];
+} else {
+    // Gérer l’absence ou l’inaccessibilité du fichier
     $utilisateurs = [];
+    error_log("Impossible de lire le fichier utilisateurs.json");
 }
 
 $erreurs = [];
