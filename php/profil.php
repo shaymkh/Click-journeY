@@ -153,6 +153,10 @@ foreach ($mesPaiements as $p) {
         <a href="profil.php?edit=password" class="edit-btn" title="Modifier votre mot de passe">✏️</a>
       <?php endif; ?>
     </div>
+      <!-- Bouton Déconnexion -->
+    <div class="profile-item logout-item">
+      <a href="logout.php" class="btn logout-btn">Se déconnecter</a>
+    </div>
      </div>
   <div class="history-section">
     <h2>Mes voyages réservés</h2>
