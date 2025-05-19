@@ -1,7 +1,6 @@
 <?php
 session_start();
 ?>
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -11,6 +10,12 @@ session_start();
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="homepage.css">
   <link id="theme-css" rel="stylesheet" href="clair.css">
+  <style>
+    /* défilement fluide pour les ancres */
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
 </head>
 <body>
   <!-- Navigation -->
@@ -20,35 +25,42 @@ session_start();
       <li><a href="#presentation">Accueil</a></li>
       <li><a href="#about">Qui sommes-nous ?</a></li>
       <li><a href="#destinations">Destinations</a></li>
+      <li><a href="voyage.php">Nos voyages</a></li>
       <li><a href="#services">Services</a></li>
       <li><a href="#avis">Avis</a></li>
     </ul>
     <button id="theme" class="theme">☀️</button>
   </nav>
-<!--  Diaporama -->
 
-        <div class="slide">
-            <img src="https://unsacsurledos.com/wp-content/uploads/2023/12/londres-en-decembre.jpg" alt="Londres en décembre">
-        </div>
-        <div class="slide">
-            <img src="https://cdn.generationvoyage.fr/2024/01/Vue-sur-les-toits-de-Dubai-la-nuit-avec-Burj-Khalifa.jpeg" alt="Dubaï de nuit">
-        </div>
-        <div class="slide">
-            <img src="https://res.cloudinary.com/dtljonz0f/image/upload/f_auto/q_auto/v1/gc-v1/new-york/andreas-kruck-l8ypMiU1Hio-unsplash.jpg" alt="New York">
-        </div>
-        <div class="slide">
-            <img src="https://cms.finnair.com/resource/blob/747040/51db80b31ed1cdf10a5520699a8e673c/amsterdam-main-data.jpg" alt="Amsterdam">
-        </div>
-        <div class="slide">
-            <img src="https://i0.wp.com/www.mahaara.fr/wp-content/uploads/2024/03/Tanger-vue-depuis-les-remparts-Maroc-Coucher-de-Soleil-Mahaara-scaled.jpg?fit=2560%2C1707&ssl=1" alt="Tanger">
-        </div>
+  <!-- Diaporama / Section Accueil -->
+  <section id="presentation" class="section">
+    <div class="slideshow-container">
+      <div class="slide">
+        <img src="https://unsacsurledos.com/wp-content/uploads/2023/12/londres-en-decembre.jpg" alt="Londres en décembre">
+      </div>
+      <div class="slide">
+        <img src="https://cdn.generationvoyage.fr/2024/01/Vue-sur-les-toits-de-Dubai-la-nuit-avec-Burj-Khalifa.jpeg" alt="Dubaï de nuit">
+      </div>
+      <div class="slide">
+        <img src="https://res.cloudinary.com/dtljonz0f/image/upload/f_auto/q_auto/v1/gc-v1/new-york/andreas-kruck-l8ypMiU1Hio-unsplash.jpg" alt="New York">
+      </div>
+      <div class="slide">
+        <img src="https://cms.finnair.com/resource/blob/747040/51db80b31ed1cdf10a5520699a8e673c/amsterdam-main-data.jpg" alt="Amsterdam">
+      </div>
+      <div class="slide">
+        <img src="https://i0.wp.com/www.mahaara.fr/wp-content/uploads/2024/03/Tanger-vue-depuis-les-remparts-Maroc-Coucher-de-Soleil-Mahaara-scaled.jpg?fit=2560%2C1707&ssl=1" alt="Tanger">
+      </div>
     </div>
+  </section>
 
- 
-  <!-- À propos de nous -->
+  <!-- Qui sommes-nous -->
   <section id="about" class="section bg-light">
     <h2 class="section-title">Qui sommes-nous ?</h2>
-    <p class="about-text">Chez CY City Adventure, nous sommes passionnés par la découverte urbaine. Notre équipe de voyageurs experts conçoit des itinéraires sur mesure pour vous faire vivre des expériences authentiques dans les plus grandes métropoles du monde.</p>
+    <p class="about-text">
+      Chez CY City Adventure, nous sommes passionnés par la découverte urbaine.  
+      Notre équipe de voyageurs experts conçoit des itinéraires sur mesure pour vous faire vivre
+      des expériences authentiques dans les plus grandes métropoles du monde.
+    </p>
   </section>
 
   <!-- Destinations phares -->
@@ -100,7 +112,7 @@ session_start();
     <h2 class="section-title">Avis voyageurs</h2>
     <div class="avis-slider">
       <div class="avis">
-        <p>« Un voyage inoubliable à Tanger grâce à CY City Adventure ! »</p>
+        <p>« Un voyage inoubliable à Tanger grâce à CY City Adventure !»</p>
         <span>— Mondir, 28 ans</span>
       </div>
       <div class="avis">
@@ -114,7 +126,6 @@ session_start();
     </div>
   </section>
 
-  
   <!-- Pied de page -->
   <footer class="footer">
     <p>&copy; 2025 CY City Adventure. Tous droits réservés.</p>
