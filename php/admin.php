@@ -39,7 +39,6 @@ $liste = array_slice($utilisateurs, $offset, $parPage);
     <div class="logo">CY City Adventure</div>
     <ul class="interface-links">
       <li><a href="homepage.html">Accueil</a></li>
-      <li><a href="presentationn.html">Présentation</a></li>
       <li><a href="voyage.php">Nos destinations</a></li>
       <li><a href="inscription.php">S'inscrire</a></li>
       <li><a href="login.php">Se connecter</a></li>
