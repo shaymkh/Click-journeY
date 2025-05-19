@@ -8,7 +8,6 @@ if (empty($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
 
 // Chemin vers le fichier JSON des utilisateurs
 $cheminUsers = __DIR__ . '/utilisateurs.json';
-// Lecture du JSON
 $json = @file_get_contents($cheminUsers);
 $utilisateurs = $json ? json_decode($json, true) : [];
 if (!is_array($utilisateurs)) {
@@ -24,7 +23,6 @@ $offset = ($page - 1) * $parPage;
 $liste = array_slice($utilisateurs, $offset, $parPage);
 ?>
 
-<!-- admin.php -->
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -37,7 +35,6 @@ $liste = array_slice($utilisateurs, $offset, $parPage);
 </head>
 <body>
 
-  <!-- Navigation -->
   <nav class="interface">
     <div class="logo">CY City Adventure</div>
     <ul class="interface-links">
@@ -51,7 +48,6 @@ $liste = array_slice($utilisateurs, $offset, $parPage);
     <button id="theme" class="theme">☀️</button>
   </nav>
 
-  <!-- Section Administration -->
   <section class="admin-section">
     <h1>Tableau de bord Administrateur</h1>
     <div class="table-container">
@@ -73,16 +69,9 @@ $liste = array_slice($utilisateurs, $offset, $parPage);
             <td><span class="status <?= (!empty($u['vip']) ? 'yes' : 'no') ?>"><?= (!empty($u['vip']) ? 'Oui' : 'Non') ?></span></td>
             <td><span class="status <?= (!empty($u['banni']) ? 'yes' : 'no') ?>"><?= (!empty($u['banni']) ? 'Oui' : 'Non') ?></span></td>
             <td>
-              <!-- Toggle VIP -->
-              <form method="post" action="admin_action.php" style="display:inline;">
-                <input type="hidden" name="login" value="<?= htmlspecialchars($u['login']) ?>">
-                <button type="submit" name="action" value="toggle_vip" class="action-btn vip-btn" title="Toggle VIP">✅</button>
-              </form>
-              <!-- Toggle Bannissement -->
-              <form method="post" action="admin_action.php" style="display:inline;">
-                <input type="hidden" name="login" value="<?= htmlspecialchars($u['login']) ?>">
-                <button type="submit" name="action" value="toggle_ban" class="action-btn ban-btn" title="Toggle Bannissement">🚫</button>
-              </form>
+              <button class="btn-action" data-login="<?= htmlspecialchars($u['login']) ?>" data-type="vip" title="Basculer VIP">✅</button>
+              <button class="btn-action" data-login="<?= htmlspecialchars($u['login']) ?>" data-type="banni" title="Basculer Banni">🚫</button>
+              <span class="loader" style="display:none;">⏳</span>
             </td>
           </tr>
           <?php endforeach; ?>
@@ -90,7 +79,6 @@ $liste = array_slice($utilisateurs, $offset, $parPage);
       </table>
     </div>
 
-    <!-- Pagination -->
     <div class="pagination">
       <?php for ($i = 1; $i <= $pages; $i++): ?>
         <?php if ($i === $page): ?>
@@ -102,9 +90,7 @@ $liste = array_slice($utilisateurs, $offset, $parPage);
     </div>
   </section>
 
-  <!-- Bascule thème -->
   <script src="homepage.js"></script>
-    <script src="admin.js" defer></script>
+  <script src="admin.js" defer></script>
 </body>
 </html>
-
