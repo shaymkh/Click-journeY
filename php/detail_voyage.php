@@ -39,33 +39,25 @@ if (!$details) {
     <h1><?= htmlspecialchars($details['titre']) ?></h1>
     <p>Du <?= htmlspecialchars($details['date_debut']) ?> au <?= htmlspecialchars($details['date_fin']) ?></p>
     <form method="post" action="recap_voyage.php">
-      <input type="hidden" name="id" value="<?= intval($details['id']) ?>">
+  <input type="hidden" name="id" value="<?= intval($details['id']) ?>">
 
-      <div class="field-group">
-        <label for="nb-personnes">Nombre de personnes</label>
-        <input type="number" id="nb-personnes" name="nb_personnes" value="1" min="1">
-      </div>
+  <div class="field-group">
+    <label for="nb-personnes">Nombre de personnes</label>
+    <input type="number" id="nb-personnes" name="nb_personnes" value="1" min="1">
+  </div>
 
-      <?php foreach ($details['etapes'] as $index => $etape): ?>
-        <fieldset>
-          <legend><?= htmlspecialchars($etape['titre']) ?></legend>
-          <?php foreach ($etape['options'] as $nomOpt => $valeurs): ?>
-            <label for="opt_<?= $index ?>_<?= htmlspecialchars($nomOpt) ?>"><?= htmlspecialchars($nomOpt) ?></label>
-            <select id="opt_<?= $index ?>_<?= htmlspecialchars($nomOpt) ?>" name="options[<?= $index ?>][<?= htmlspecialchars($nomOpt) ?>]">
-              <?php foreach ($valeurs as $val => $prix): ?>
-                <option value="<?= htmlspecialchars($val) ?>"><?= htmlspecialchars($val) ?> (+<?= number_format($prix,2,',',' ') ?> €)</option>
-              <?php endforeach; ?>
-            </select>
-          <?php endforeach; ?>
-        </fieldset>
-      <?php endforeach; ?>
+  <div id="options-container"></div>
 
-      <button type="submit" class="btn">Voir récapitulatif</button>
-    </form>
-    <p class="prix-estime">Prix estimé : <span id="prix-estime">...</span> €</p>
+  <button type="submit" class="btn">Voir récapitulatif</button>
+</form>
+<p class="prix-estime">
+  Prix estimé : <span id="prix-estime">...</span> €
+  <span id="calcul-loader" style="display:none;">⏳ Calcul...</span>
+</p>
   </section>
 
   <script src="detail_voyage.js"></script>
   <script src="homepage.js"></script>
 </body>
 </html>
+
