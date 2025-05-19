@@ -35,6 +35,7 @@ if (empty($details)) {
     die('Voyage introuvable');
 }
 
+// Calcul du total
 $total = floatval($details['prix_base']);
 foreach ($details['etapes'] as $i => $etape) {
     foreach ($etape['options'] as $nomOpt => $valeurs) {
@@ -51,21 +52,24 @@ $dateFin = new DateTime($details['date_fin']);
 $durationDays = $dateDebut->diff($dateFin)->days;
 $nbEtapes = count($details['etapes']);
 ?>
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Récapitulatif – <?= htmlspecialchars($details['titre'], ENT_QUOTES) ?></title>
+  <title>Récapitulatif – <?= htmlspecialchars($details['titre'], ENT_QUOTES) ?> – CY City Adventure</title>
+  <!-- CSS globaux -->
   <link rel="stylesheet" href="destinations.css">
   <link rel="stylesheet" href="detail.css">
   <link rel="stylesheet" href="recap_voyage.css">
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <!-- Thème clair/sombre -->
+  <link id="theme-css" rel="stylesheet" href="clair.css">
 </head>
 <body<?= $readonly ? ' class="readonly"' : '' ?>>
 
-  <!-- Navigation -->
+  <!-- Navigation avec bascule de thème -->
   <nav class="interface">
     <div class="logo">CY City Adventure</div>
     <ul class="interface-links">
@@ -82,23 +86,25 @@ $nbEtapes = count($details['etapes']);
   <section class="recap-section">
     <h1>Récapitulatif de votre voyage</h1>
     <h2><?= htmlspecialchars($details['titre'], ENT_QUOTES) ?></h2>
-    <p>Dates : <?= htmlspecialchars($details['date_debut'], ENT_QUOTES) ?> → <?= htmlspecialchars($details['date_fin'], ENT_QUOTES) ?></p>
-    <p>Durée : <?= $durationDays ?> jours</p>
-    <p>Nombre d'étapes : <?= $nbEtapes ?></p>
-    <p>Nombre de personnes : <?= $nbPersonnes ?></p>
+    <p><strong>Dates :</strong> <?= htmlspecialchars($details['date_debut'], ENT_QUOTES) ?> &rarr; <?= htmlspecialchars($details['date_fin'], ENT_QUOTES) ?></p>
+    <p><strong>Durée :</strong> <?= $durationDays ?> jours</p>
+    <p><strong>Étapes :</strong> <?= $nbEtapes ?></p>
+    <p><strong>Personnes :</strong> <?= $nbPersonnes ?></p>
 
     <ul>
       <?php foreach ($details['etapes'] as $i => $etape): ?>
         <li>
-          <strong><?= htmlspecialchars($etape['titre'], ENT_QUOTES) ?> :</strong>
+          <strong><?= htmlspecialchars($etape['titre'], ENT_QUOTES) ?></strong>
           <?php foreach ($etape['options'] as $nomOpt => $valeurs): ?>
-            <?= htmlspecialchars($nomOpt, ENT_QUOTES) ?> = <?= htmlspecialchars($options[$i][$nomOpt] ?? $etape['options_defaut'][$nomOpt], ENT_QUOTES) ?>;
+            <br><?= htmlspecialchars($nomOpt, ENT_QUOTES) ?> : <?= htmlspecialchars($options[$i][$nomOpt] ?? $etape['options_defaut'][$nomOpt], ENT_QUOTES) ?>
           <?php endforeach; ?>
         </li>
       <?php endforeach; ?>
     </ul>
 
-    <p><strong>Prix total : <?= number_format($total, 2, ',', ' ') ?> €</strong></p>
+    <p class="prix-final">
+      <strong>Prix total :</strong> <?= number_format($total, 2, ',', ' ') ?> €
+    </p>
 
     <div class="recap-actions">
       <a href="detail_voyage.php?id=<?= $id ?>" class="btn">Modifier</a>
@@ -106,6 +112,7 @@ $nbEtapes = count($details['etapes']);
     </div>
   </section>
 
+  <!-- Script pour le thème -->
   <script src="homepage.js"></script>
 </body>
 </html>
