@@ -1,7 +1,7 @@
 [
     {
         "login": "admin1",
-        "mot_de_passe": "34FHTyyy",
+        "mot_de_passe": "123456",
         "role": "admin",
         "email": "admin1@exemple.com",
         "date_inscription": "2025-05-01",
@@ -19,9 +19,9 @@
     },
     {
         "login": "oui",
-        "mot_de_passe": "1234",
+        "mot_de_passe": "123456",
         "role": "user",
-        "email": "i@exemple.com",
+        "email": "oui@exemple.com",
         "date_inscription": "2025-05-10",
         "derniere_connexion": "2025-05-18 13:03:00",
         "voyages_achetes": []
