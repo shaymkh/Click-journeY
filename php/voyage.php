@@ -12,6 +12,8 @@ if (!is_array($voyages)) $voyages = [];
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Recherche de voyages – CY City Adventure</title>
   <link rel="stylesheet" href="destinations.css" />
+  <!-- Thème clair/sombre -->
+  <link id="theme-css" rel="stylesheet" href="clair.css" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
 </head>
 <body>
