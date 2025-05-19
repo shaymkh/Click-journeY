@@ -8,15 +8,15 @@ vous pouvez tester le site avec ça si vous teleccharger bien le fichier 'utilis
 
 code carte bleue valide : 
 
-numéro de carte : 5555 1234 5678 9000
+numéro de carte : 5555 1234 5678 9000/
 CCV : 555
 
-exemple d'identifiant et de mot de passe pour un admin 
+exemple d'identifiant et de mot de passe pour un admin :
 
-mail : admin1@exemple.com
+mail : admin1@exemple.com/
 mdp : 123456
 
-exemple d'identifiant et de mot de passe pour un utilisateur déja inscrit 
+exemple d'identifiant et de mot de passe pour un utilisateur déja inscrit :
 
-mail : oui@exemple.com
+mail : oui@exemple.com/
 mdp : 123456
