@@ -11,7 +11,7 @@ body {
   color: var(--text);
 }
 
-/* Exemple pour ta nav */
+
 nav.interface {
   background: var(--nav-bg);
 }
