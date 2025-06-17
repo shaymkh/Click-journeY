@@ -13,7 +13,6 @@ if (is_readable($cheminUsers)) {
 } else {
     // Gérer l’absence ou l’inaccessibilité du fichier
     $utilisateurs = [];
-    error_log("Impossible de lire le fichier utilisateurs.json");
 }
 
 $erreurs = [];
